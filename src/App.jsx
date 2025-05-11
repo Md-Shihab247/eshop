@@ -5,19 +5,22 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import CheakoutPage from "./pages/CheakoutPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
+import CommonLayouts from "./components/layouts/CommonLayouts";
 
 function App() {
   
   return (
     <>
       <Routes> 
-        <Route index element={<HomePage />} />
-        <Route path="/product-list" element={<ProductListPage />} />
-        <Route path="/product-detail" element={<ProductDetailPage />} />
-        <Route path="/checkout" element={<CheakoutPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+        <Route element= {<CommonLayouts />}>
+          <Route index element={<HomePage />} />
+          <Route path="/product-list" element={<ProductListPage />} />
+          <Route path="/product-detail" element={<ProductDetailPage />} />
+          <Route path="/checkout" element={<CheakoutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+      </Routes> 
     </>
   )
 }
