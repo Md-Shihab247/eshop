@@ -1,13 +1,14 @@
 import Container from "../Container"
 import TopLeft from "./topLayerComponents/TopLeft"
+import TopRight from "./topLayerComponents/TopRight"
 
 const TopLayer = () => {
   return (
     <div className=" border-b border-[#CBCBCB]">
         <Container>
-            <div className="flex justify-between items-center py-5">
+            <div className="flex justify-between items-center py-5 font-montserrat">
                 <TopLeft/>
-                <div>part2</div>
+                <TopRight/>
             </div>
         </Container>
     </div>

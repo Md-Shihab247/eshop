@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const TopLeft = () => {
   return (
     <div>
-      <div className=" flex items-center justify-center gap-[50px] relative font-montserrat text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[62%] before:h-8 before:w-[1px] before:bg-[#CBCBCB]">
+      <div className=" flex items-center justify-center gap-[50px] relative text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[62%] before:h-8 before:w-[1px] before:bg-[#CBCBCB]">
         <span className="cursor-pointer flex items-center justify-center gap-2">
           <IoLocationOutline />
           <Link to="https://maps.app.goo.gl/n58JNE5g419y34Uc8" target="_blank">
