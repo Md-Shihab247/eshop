@@ -1,8 +1,8 @@
 
-const Button = ({content,bg='#FF624C',color='#fff',size="xl",fontName= 'Montserrat',weight="bold",lineHeight='30',paddingX='4',paddingY='10'}) => {
+const Button = ({content,bg='#FF624C',color='white',size="xl",fontName= 'Montserrat',weight="bold",lineHeight='30px',paddingX='10',paddingY='4',mt='4', radious='10px'}) => {
   return (
     <button className={`
-        bg-[${bg}] text-[${color}] text-[${size}] leading-[${lineHeight}] font-[${fontName}] font-[${weight}] px-[${paddingX}] py-[${paddingY}] rounded-md
+        bg-[${bg}] text-${color} text-${size}  leading-[${lineHeight}] font-[${fontName}] font-${weight} px-${paddingX} py-${paddingY} rounded-[${radious}] mt-${mt}
       `}>{content}</button>
   )
 }

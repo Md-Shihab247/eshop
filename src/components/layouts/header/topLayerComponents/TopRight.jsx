@@ -8,15 +8,15 @@ const TopRight = () => {
 
     let [selected,setSelected] = useState(null)
     // let [isOpen,setIsOpen] = useState(false)
-    let [selectedFlag,setSelectedFlag] = useState('https://flagcdn.com/16x12/us.png')
+    let [selectedFlag,setSelectedFlag] = useState('https://flagcdn.com/w40/us.png')
  
   const countries = [
-        { name: 'United States', code: 'US', flag: 'https://flagcdn.com/16x12/us.png' },
-        { name: 'Canada', code: 'CA', flag: 'https://flagcdn.com/16x12/ca.png' },
-        { name: 'United Kingdom', code: 'UK', flag: 'https://flagcdn.com/16x12/gb.png' },
-        { name: 'Australia', code: 'AU', flag: 'https://flagcdn.com/16x12/au.png' },
-        { name: 'Germany', code: 'DE', flag: 'https://flagcdn.com/16x12/de.png' },
-        { name: 'France', code: 'FR', flag: 'https://flagcdn.com/16x12/fr.png' },
+        { name: 'United States', code: 'US', flag: 'https://flagcdn.com/w40/us.png' },
+        { name: 'Canada', code: 'CA', flag: 'https://flagcdn.com/w40/ca.png' },
+        { name: 'United Kingdom', code: 'UK', flag: 'https://flagcdn.com/w40/gb.png' },
+        { name: 'Australia', code: 'AU', flag: 'https://flagcdn.com/w40/au.png' },
+        { name: 'Germany', code: 'DE', flag: 'https://flagcdn.com/w40/de.png' },
+        { name: 'France', code: 'FR', flag: 'https://flagcdn.com/w40/fr.png' },
     ]
 
     // let handleSelect = (country)=>{
@@ -38,7 +38,7 @@ const TopRight = () => {
       </div>
       <div className=' flex w-[112px]'>
 
-        <img src={selectedFlag} alt="Flag" className=' w-5 h-3 mt-[3px] mr-0.5' />
+        <img src={selectedFlag} alt="Flag" className=' w-6 h-4 mt-[3px] mr-0.5' />
         <select className=' w-full outline-hidden cursor-pointer whitespace-nowrap overflow-ellipsis '
         name="country" 
         value={selected?.code}
