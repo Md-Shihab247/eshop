@@ -7,7 +7,7 @@ const MiddleLayer = () => {
     <Container >
       <div className=" font-montserrat py-8 flex items-center justify-between">
         <div>
-          <img src="../../../../public/images/logo.png" alt="logo" />
+          <img src="./images/logo.png" alt="logo" />
         </div>
 
         <div className=" flex justify-end items-center">
