@@ -3,6 +3,7 @@ import TopLeft from "./topLayerComponents/TopLeft"
 import TopRight from "./topLayerComponents/TopRight"
 
 const TopLayer = () => {
+  
   return (
     <div className=" border-b border-[#CBCBCB]">
         <Container>
