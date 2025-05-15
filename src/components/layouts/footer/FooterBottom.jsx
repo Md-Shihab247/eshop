@@ -28,7 +28,7 @@ const FooterBottom = () => {
                     <span className="flex items-center gap-x-3">
                       <IoLocationSharp className=' h-5 w-5'/>
                       <Link to="https://maps.app.goo.gl/n58JNE5g419y34Uc8" target="_blank">
-                        123 Main Street, Anytown USA
+                        123 Main Street, Suite 105, Anytown USA
                       </Link>
                     </span>
                   </li>
