@@ -72,7 +72,7 @@ const FooterBottom = () => {
               </div>
               
               <div>
-                <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-[25px]'>Links</h4>
+                <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-[25px]'>Payments</h4>
                 <img src="./images/payment.png" alt="logo" className=' mb-[74px]' />
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Follow Us</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
