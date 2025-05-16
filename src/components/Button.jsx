@@ -12,6 +12,7 @@ const Button = ({
 }) => {
   return (
     <button
+      className=" cursor-pointer"
       style={{
         background: `${bg}`,
         color: `${color}`,
