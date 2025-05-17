@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { IoLogoInstagram } from 'react-icons/io5'
+import { MdKeyboardArrowDown } from 'react-icons/md'
 import { RiTwitterFill } from 'react-icons/ri'
 import { TiSocialFacebook } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
@@ -7,8 +8,9 @@ import { Link } from 'react-router-dom'
 const TopRight = () => {
 
     let [selected,setSelected] = useState(null)
-    // let [isOpen,setIsOpen] = useState(false)
-    let [selectedFlag,setSelectedFlag] = useState('https://flagcdn.com/w40/us.png')
+    let [isOpen,setIsOpen] = useState(false)
+    let dropdownRef = useRef(null)
+    // let [selectedFlag,setSelectedFlag] = useState('https://flagcdn.com/w40/us.png')
  
   const countries = [
         { name: 'United States', code: 'US', flag: 'https://flagcdn.com/w40/us.png' },
@@ -19,11 +21,25 @@ const TopRight = () => {
         { name: 'France', code: 'FR', flag: 'https://flagcdn.com/w40/fr.png' },
     ]
 
-    // let handleSelect = (country)=>{
-    //   setSelected(country)
-    //   setIsOpen(false)
+    let handleSelect = (country)=>{
+      setSelected(country)
+      setIsOpen(false)
+    }
 
-    // }
+    useEffect(()=>{
+
+      let handleDropDown = ()=>{
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsOpen(false)
+        }}
+
+      document.addEventListener('click', handleDropDown)
+
+      return ()=>{
+        document.removeEventListener('click',handleDropDown)
+      }
+
+    },[])
 
   return (
     <div className=' uppercase flex items-center justify-end relative gap-[50px] text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[65%] before:h-8 before:w-[1px] before:bg-[#CBCBCB] after:absolute after:left-[20%] after:h-8 after:w-[1px] after:bg-[#CBCBCB]'>
@@ -36,10 +52,10 @@ const TopRight = () => {
           <option value="INR ">INR </option>
         </select>
       </div>
-      <div className=' flex w-[112px]'>
+      <div className=' flex items-center justify-center whitespace-nowrap'>
 
-        <img src={selectedFlag} alt="Flag" className=' w-6 h-4 mt-[3px] mr-0.5' />
-        <select className=' w-full outline-hidden cursor-pointer whitespace-nowrap overflow-ellipsis '
+        {/* <img src={selectedFlag} alt="Flag" className=' w-6 h-4 mt-[3px] mr-0.5' /> */}
+        <select className=' hidden w-full outline-hidden cursor-pointer whitespace-nowrap overflow-ellipsis '
         name="country" 
         value={selected?.code}
         onChange={(e)=>{          
@@ -55,35 +71,42 @@ const TopRight = () => {
 
         {/* custom dropdown */}
 
-          {/* <div 
-          className=' relative w-[130] cursor-pointer flex gap-2 h-[20px]'
+          <div 
+          className=' relative cursor-pointer flex items-center'
+          ref={dropdownRef}
           onClick={()=> setIsOpen(!isOpen)}
           >
             {selected ?
             <>
-              <img src={selected.flag} alt="" className=' w-5 h-3 mt-1'/>
-              <span>{selected.name}</span>
+              <img src={selected.flag} alt="" className=' scale-65'/>
+              <span >{selected.name}</span>
+              <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
             </>
             :
-            "select a country"
+            
+            <div className=' flex items-center'>
+              <span>select country</span>
+              <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
+            </div> 
             }
 
-          </div>
             {isOpen &&
-            <ul className=' w-[50%] translate-x-[-15px] absolute bg-[#fff] shadow box-border mt-5 rounded-[10px]'>
+            <ul className=' absolute w-[210px] top-10 left-[-20px] bg-white shadow-xl z-50 font-montserrat text-[#303030] font-semibold text-sm'>
               {countries.map((country ,index)=>{
 
                   return <li key={index}
-                            className=' flex mt-3 flex-wrap gap-2 p-1 cursor-pointer'
+                            className=' flex items-center text-sm py-2.5 px-3 gap-1 border-b border-[#CBCBCB] cursor-pointer last:border-hidden hover:bg-[#ccc]'
                             onClick={()=> handleSelect(country)}
                             >
+                          <img src={country.flag} alt="flag" className=' scale-65'/>
                           {country.name}
                         </li>
 
               })
             }
             </ul>
-            } */}
+            }
+            </div>
 
       </div>
       <div className=' flex items-center justify-center gap-6'>

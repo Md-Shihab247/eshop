@@ -10,21 +10,31 @@ const BottomLayer = () => {
   let dropDownTwoRef = useRef(null);
 
   // All Categories Dropdown here 
-  useEffect(()=>{
-    document.addEventListener('mousedown',(event)=>{
+  useEffect(() => {
+    let handleDropDown1 = (event) => {
       if (dropDownOneRef.current && !dropDownOneRef.current.contains(event.target)) {
-       setIsDropDownOpen1(false) 
+        setIsDropDownOpen1(false);
       }
-    })
-  },[])
+    };
+
+    document.addEventListener('click', handleDropDown1);
+    return () => {
+      document.removeEventListener('click', handleDropDown1);
+    };
+  }, []);
 
   // Products Dropdown here 
   useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
+
+    let handleDropDown2 = (event)=>{
       if ( dropDownTwoRef.current && !dropDownTwoRef.current.contains(event.target)) {
         setIsDropDownOpen2(false);
       }
-    });
+    }
+    document.addEventListener("mousedown", handleDropDown2)
+    return ()=>{
+       document.removeEventListener('mousedown',handleDropDown2)
+      }
   }, []);
 
   return (
@@ -34,7 +44,7 @@ const BottomLayer = () => {
           <ul className=" text-white font-bold font-montserrat text-base leading-6 flex gap-x-[80px]">
             <li ref={dropDownOneRef}  className=" relative flex items-center justify-center gap-x-4">
               <FaBars className=" h-5 w-5" />
-              <button onClick={()=> setIsDropDownOpen1(!isDropDownOpen1)}>All Categories</button>
+              <button className="cursor-pointer" onClick={()=> setIsDropDownOpen1(!isDropDownOpen1)}>All Categories</button>
               {isDropDownOpen1 && (
                 <ul className="bg-[#fff] font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px]">
                   <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
@@ -55,7 +65,7 @@ const BottomLayer = () => {
                 </ul>
               )}
             </li>
-            <li ref={  dropDownTwoRef} className=" relative">
+            <li ref={dropDownTwoRef} className=" relative">
               <button className=" flex items-center cursor-pointer"  onClick={() => setIsDropDownOpen2(!isDropDownOpen2)}>
                 Products
                 <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
