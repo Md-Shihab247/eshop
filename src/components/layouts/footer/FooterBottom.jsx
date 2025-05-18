@@ -38,36 +38,36 @@ const FooterBottom = () => {
               <div className=' mr-[96px]'>
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Links</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
-                  <li>Products List</li>
-                  <li>Order Tracking</li>
-                  <li>Products Guide</li>
-                  <li>Shopping Cart</li>
-                  <li>Tech Blog</li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Products List </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Order Tracking </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Products Guide </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Shopping Cart </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Tech Blog </Link> </li>
                 </ul>
               </div>
               
               <div className=' mr-[96px]'>
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Supports</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
-                  <li>About Us</li>
-                  <li>Privacy Policy</li>
-                  <li>Return Policy</li>
-                  <li>Help Centre</li>
-                  <li>Store Locations</li>
-                  <li>Careers</li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>About Us</Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Privacy Policy</Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Return Policy</Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Help Centre</Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Store Locations</Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Careers</Link> </li>
                 </ul>
               </div>
               
               <div className=' mr-[80px]'>
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Categories</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
-                  <li>Computers & Tablets</li>
-                  <li>Mobile Phones & Accessories</li>
-                  <li>TV & Home Theater</li>
-                  <li>Audio & Headphones</li>
-                  <li>Cameras & Camcorders</li>
-                  <li>Gaming Equipment</li>
-                  <li>Home Appliances</li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Computers & Tablets </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Mobile Phones & Accessories </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> TV & Home Theater </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Audio & Headphones </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Cameras & Camcorders </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Gaming Equipment </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Home Appliances </Link> </li>
                 </ul>
               </div>
               
@@ -76,9 +76,9 @@ const FooterBottom = () => {
                 <img src="./images/payment.png" alt="logo" className=' mb-[74px]' />
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Follow Us</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
-                  <li>Twitter</li>
-                  <li>Instagram</li>
-                  <li>Facebook</li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Twitter </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Instagram </Link> </li>
+                  <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Facebook </Link> </li>
                 </ul>
               </div>
               
