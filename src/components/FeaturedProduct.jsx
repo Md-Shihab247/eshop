@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import RightArrow from "./icons/RightArrow";
 import LeftArrow from "./icons/LeftArrow";
+import { Link } from "react-router-dom";
+import ArrowRight from "./icons/ArrowRight";
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -38,6 +40,10 @@ const FeaturedProduct = () => {
   return (
     <div className="mb-[80px]">
       <Container>
+        <div className=" flex justify-between mb-12">
+          <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]">Featured Products</h3>
+            <Link to='/' className=" flex gap-x-4 items-center text-[#FF624C] font-montserrat text-base font-bold leading-9">View All <ArrowRight/></Link>
+        </div>
           <Slider {...settings}>
           <ProductLayout catagory={"PHONE"} tittle={"JPhone 13 High Quality Value Buy Best Cam..."} price={"$999.00"} rating={5} bordering={true} stack={false} starckAmount={"50"} />
           <ProductLayout catagory={"AUDIO"} tittle={"WH-1000XM4 Wireless Headphones High Qu..."} price={"$59.00"} rating={4} oldPrice={"$118.00"} discount={true} bordering={true} stack={false} starckAmount={"50"} />

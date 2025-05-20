@@ -9,6 +9,7 @@ const Button = ({
   paddingX = "40px",
   paddingY = "16px",
   radious = "10",
+  border="none"
 }) => {
   return (
     <button
@@ -22,6 +23,7 @@ const Button = ({
         lineHeight: `${lineHeight}`,
         padding: `${paddingY} ${paddingX}`,
         borderRadius: `${radious}px`,
+        border: border,
       }}
     >
       {content}
