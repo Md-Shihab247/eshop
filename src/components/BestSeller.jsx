@@ -20,7 +20,7 @@ const BestSeller = () => {
             <ProductLayout catagory={"TABLET"} tittle={"Tablet Pro 128 GB HD RAM 8 GB i8 1080P 4K ..."} price={"$129.00"} rating={4} oldPrice={"$167.00"} discount={true} bordering={true} stack={false} starckAmount={"50"} />
           </div>
           <div className=" max-w-[285px]">
-            <ProductLayout catagory={"WATCH"} tittle={"Mobile Watch A Series GPS 7/144 45 mm Red..."} price={"$999.00"} rating={3} bordering={true} discount={false} stack={false} starckAmount={"50"} />
+            <ProductLayout catagory={"WATCH"} tittle={"Mobile Watch A Series GPS 7/144 45 mm Red.."} price={"$999.00"} rating={3} bordering={true} discount={false} stack={false} starckAmount={"50"} />
           </div>
           <div className=" max-w-[285px]">
             <ProductLayout catagory={"PHONE"} tittle={"LT Phone RAM 16/256 GB Rose Gold Guaran..."} price={"$999.00"} rating={5} bordering={true} discount={false} stack={false} starckAmount={"50"} />
