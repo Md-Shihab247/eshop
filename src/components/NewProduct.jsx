@@ -6,7 +6,17 @@ import Button from "./Button"
 
 const NewProduct = () => { 
 
+      const newProducts = [
+        { product: 'All Catagories' },
+        { product: 'Beauty' },
+        { product: 'Home' },
+        { product: 'Electronics'  },
+        { product: 'Toys'},
+        { product: 'Books' },
+    ]
+
     let [isDropDownOpen,setIsDropDownOpen] = useState(false)
+    let [selected,setSelected] = useState(null)
     let dropdownRef = useRef(null)
 
     useEffect(()=>{
@@ -25,6 +35,14 @@ const NewProduct = () => {
 
     },[])
 
+    let handleSelect = (item)=>{
+      console.log(selected);
+      
+      setSelected(item)
+      setIsDropDownOpen(false)
+
+    }
+
   return (
     <div className="my-[80px]">
       <Container>
@@ -32,27 +50,27 @@ const NewProduct = () => {
           <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]">New Products</h3>
           <div className=" flex items-center gap-x-4">
             <span className=" text-[#303030] font-montserrat text-base font-normal leading-6">Sort by</span>
-            <div ref={dropdownRef} className=" relative flex items-center"> 
-                <button onClick={()=> setIsDropDownOpen(!isDropDownOpen)} className=" flex items-center cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Categories <IoIosArrowDown  className="ml-[100px] h-4 w-4"/></button>
-            {isDropDownOpen && (
-                <ul className="bg-[#fff] right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
-                  <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
-                    Electronics
-                  </li>
-                  <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
-                    Fashion
-                  </li>
-                  <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
-                    Home & Kitchen
-                  </li>
-                  <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
-                    Toys & Games
-                  </li>
-                  <li className=" cursor-pointer px-5 py-3 hover:bg-[#DFE3E7]">
-                    Books & Stationery
-                  </li>
-                </ul>
-              )}
+            <div 
+                onClick={()=> {setIsDropDownOpen(!isDropDownOpen) }}
+                ref={dropdownRef}
+                className=" relative flex items-center"> 
+                  {selected 
+                  ?
+                  <div  className=" flex items-center cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> {selected} <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} ml-[100px] text-black h-4 w-4 `}/></div>
+                  : 
+                  <div  className=" flex items-center cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={ `${isDropDownOpen && `rotate-180`} ml-[100px] text-black h-4 w-4`}/></div>
+                  }
+
+                {isDropDownOpen && (
+                    <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
+                      {newProducts.map((item,index)=>{
+
+                      return <li onClick={()=> handleSelect(item.product)} className={` py-1.5 px-3 cursor-pointer hover:bg-[#ddd]`} key={index}> {item.product} </li>
+
+                      })}
+                    </ul>
+                      
+                  )}
               </div>
           </div>
         </div>
