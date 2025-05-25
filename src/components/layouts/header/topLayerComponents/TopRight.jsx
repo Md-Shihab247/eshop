@@ -21,6 +21,7 @@ const TopRight = () => {
         { name: 'France', code: 'FR', flag: 'https://flagcdn.com/w40/fr.png' },
       ]
 
+      
     let handleSelect = (country)=>{
       setSelected(country)
       i18n.changeLanguage(country.code)
