@@ -3,12 +3,13 @@ import Container from "../Container";
 import { FaBars } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 const BottomLayer = () => {
   let [isDropDownOpen1, setIsDropDownOpen1] = useState(false);
   let [isDropDownOpen2, setIsDropDownOpen2] = useState(false);
   let dropDownOneRef = useRef(null);
   let dropDownTwoRef = useRef(null);
-
+  let {t} = useTranslation();
   // All Categories Dropdown here 
   useEffect(() => {
     let handleDropDown1 = (event) => {
@@ -44,7 +45,7 @@ const BottomLayer = () => {
           <ul className=" text-white font-bold font-montserrat text-base leading-6 flex gap-x-[80px]">
             <li ref={dropDownOneRef}  className=" relative flex items-center justify-center gap-x-4">
               <FaBars className=" h-5 w-5" />
-              <button className="cursor-pointer" onClick={()=> setIsDropDownOpen1(!isDropDownOpen1)}>All Categories</button>
+              <button className="cursor-pointer" onClick={()=> setIsDropDownOpen1(!isDropDownOpen1)}> {t("All_Categories")} </button>
               {isDropDownOpen1 && (
                 <ul className="bg-[#fff] font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px]">
                   <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
@@ -67,7 +68,7 @@ const BottomLayer = () => {
             </li>
             <li ref={dropDownTwoRef} className=" relative">
               <button className=" flex items-center cursor-pointer"  onClick={() => setIsDropDownOpen2(!isDropDownOpen2)}>
-                Products
+                {t("Products")}
                 <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
               </button>
               {isDropDownOpen2 && (
@@ -94,22 +95,22 @@ const BottomLayer = () => {
               )}
             </li>
             <li>
-              <Link to={"/blog"}>Blog</Link>
+              <Link to={"/blog"}> {t("Blog")} </Link>
             </li>
             <li>
-              <Link to={"/contact"}>Contact</Link>
+              <Link to={"/contact"}>{t("Contact")}</Link>
             </li>
           </ul>
 
           <ul className=" text-white font-bold font-montserrat text-base leading-6 flex gap-x-[80px]">
             <li className=" flex items-center justify-center gap-x-4">
-              <Link to={"#"}>LIMITED SALE 👋🏻</Link>
+              <Link to={"#"}>{t("LIMITED_SALE")}</Link>
             </li>
             <li>
-              <Link to={"#"}>Best Seller</Link>
+              <Link to={"#"}>{t("Best_Sellers")}</Link>
             </li>
             <li>
-              <Link to={"#"}>New Arrival</Link>
+              <Link to={"#"}>{t("New_Arrival")}</Link>
             </li>
           </ul>
         </div>

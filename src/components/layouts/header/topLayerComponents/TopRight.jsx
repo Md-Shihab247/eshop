@@ -4,25 +4,26 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 import { RiTwitterFill } from 'react-icons/ri'
 import { TiSocialFacebook } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
-
+import i18n from '../../../../i18n'
 const TopRight = () => {
 
     let [selected,setSelected] = useState(null)
     let [isOpen,setIsOpen] = useState(false)
     let dropdownRef = useRef(null)
     // let [selectedFlag,setSelectedFlag] = useState('https://flagcdn.com/w40/us.png')
- 
-  const countries = [
-        { name: 'United States', code: 'US', flag: 'https://flagcdn.com/w40/us.png' },
-        { name: 'Canada', code: 'CA', flag: 'https://flagcdn.com/w40/ca.png' },
+    
+    const countries = [
+        { name: 'English', code: 'en', flag: 'https://flagcdn.com/w40/us.png' },
+        { name: 'Bangali', code: 'bd', flag: 'https://flagcdn.com/w40/bd.png' },
         { name: 'United Kingdom', code: 'UK', flag: 'https://flagcdn.com/w40/gb.png' },
         { name: 'Australia', code: 'AU', flag: 'https://flagcdn.com/w40/au.png' },
         { name: 'Germany', code: 'DE', flag: 'https://flagcdn.com/w40/de.png' },
         { name: 'France', code: 'FR', flag: 'https://flagcdn.com/w40/fr.png' },
-    ]
+      ]
 
     let handleSelect = (country)=>{
       setSelected(country)
+      i18n.changeLanguage(country.code)
       setIsOpen(false)
     }
 
@@ -40,6 +41,8 @@ const TopRight = () => {
       }
 
     },[])
+
+
 
   return (
     <div className=' uppercase flex items-center justify-end relative gap-[50px] text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[65%] before:h-8 before:w-[1px] before:bg-[#CBCBCB] after:absolute after:left-[20%] after:h-8 after:w-[1px] after:bg-[#CBCBCB]'>
@@ -74,7 +77,7 @@ const TopRight = () => {
           <div 
           className=' relative cursor-pointer flex items-center'
           ref={dropdownRef}
-          onClick={()=> setIsOpen(!isOpen)}
+          onClick={()=>  setIsOpen(!isOpen)}
           >
             {selected ?
             <>
@@ -85,7 +88,8 @@ const TopRight = () => {
             :
             
             <div className=' flex items-center'>
-              <span>select country</span>
+              <img src={countries[0].flag} alt="" className='scale-65'/>
+              <span> {countries[0].name}</span>
               <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
             </div> 
             }

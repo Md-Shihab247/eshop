@@ -2,7 +2,11 @@ import { IoSearchOutline } from "react-icons/io5"
 import Container from "../Container"
 import CartIcon from "../../icons/CartIcon"
 import UserIcon from "../../icons/UserIcon"
+import { useTranslation } from "react-i18next"
 const MiddleLayer = () => {
+
+  let { t } = useTranslation();
+
   return (
     <Container >
       <div className=" font-montserrat py-8 flex items-center justify-between">
@@ -18,16 +22,16 @@ const MiddleLayer = () => {
           <div className=" flex items-center justify-center gap-6 mr-[80px] ml-12">
             <CartIcon />
             <div className=" text-[#303030] text-base  leading-6">
-              <p className=" font-normal">Cart</p>
-              <span className=" font-bold">$ 150,00</span>
+              <p className=" font-normal"> {t("Cart")} </p>
+              <span className=" font-bold"> {t("$_150,000")} </span>
             </div>
           </div>
 
           <div className=" flex items-center justify-end gap-6 ml-12 relative before:absolute before:left-[-50%] before:h-8 before:w-[1px] before:bg-[#CBCBCB]">
             <UserIcon/>
             <div className=" text-[#303030] text-base  leading-6">
-              <p className=" font-normal">User</p>
-              <span className=" font-bold">Account</span>
+              <p className=" font-normal">{t("User")}</p>
+              <span className=" font-bold">{t("Account")}</span>
             </div>
           </div>
           
