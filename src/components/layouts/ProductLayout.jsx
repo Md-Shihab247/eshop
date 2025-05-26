@@ -3,7 +3,7 @@ import { IoMdStar } from 'react-icons/io'
 import CartIcon from "../icons/CartIcon2"
 import HeartIcon from "../icons/HeartIcon"
 import ShareIcon from "../icons/ShareIcon"
-const ProductLayout = ({limited,padding,src="images/product-img.png", catagory="it's missing",tittle="Title missing",price="price is not define",oldPrice,rating,bordering,discount,stack,starckAmount}) => {
+const ProductLayout = ({springDisAmount,springDiscount,limited,padding,src="images/product-img.png", catagory="it's missing",tittle="Title missing",price="price is not define",oldPrice,rating,bordering,discount,stack,starckAmount}) => {
 
     let [ratings,setRatings] = useState(new Array(rating).fill(rating))
 
@@ -13,6 +13,9 @@ const ProductLayout = ({limited,padding,src="images/product-img.png", catagory="
             <img src={src} alt="product img" />
             {discount &&
               <div className=' absolute top-4 right-4 font-bold font-montserrat text-base leading-6 py-[7px] px-5 rounded-[5px] bg-[#FF624C] text-white'>50%</div>
+            }
+            {springDiscount &&
+              <div className=' absolute top-0 right-0 font-bold font-montserrat text-base leading-6 flex items-center justify-center w-[100px] h-[100px] rounded-[50%] bg-[#FF624C] text-white'> {springDisAmount} </div>
             }
             <div className=' absolute bottom-[-100px] gap-x-4.5 left-[50%] opacity-0 duration-300 group-hover:bottom-[6px] group-hover:opacity-100 translate-x-[-50%] flex justify-center items-center'>
                 <div className=' h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] duration-300 hover:bg-[#FF624C] text-[#FF624C] group-[.group]:hover:text-white'>
@@ -44,7 +47,7 @@ const ProductLayout = ({limited,padding,src="images/product-img.png", catagory="
             </div>
             {stack &&
                 <div className=' bg-[#E0E0E0] w-full h-[30px] mt-8 rounded-[25px] relative'>
-                    <div className={`top-0 left-0 h-[100%] ${limited ? `w-[97%]` : `w-1/2`} rounded-[25px] z-10 ${limited ? `bg-[#FF624C]` : `bg-[#303030]`}`}></div>
+                    <div className={`top-0 left-0 h-[100%] ${limited ? `w-[97%]` : `w-[59%]`} rounded-[25px] z-10 ${limited ? `bg-[#FF624C]` : `bg-[#303030]`}`}></div>
                     <p className=' absolute top-[5px] left-[50%] translate-x-[-50%]  font-bold text-sm font-montserrat text-white leading-6'> {starckAmount} {limited ? limited : "AVAILABLE"}</p>
                 </div>
             }
