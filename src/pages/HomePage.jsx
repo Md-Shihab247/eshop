@@ -16,10 +16,10 @@ const HomePage = () => {
       <FeaturedProduct/>
       <OfferSection/>
       <NewProduct/>
+      <SpringSale/>
       <BestSeller/>
       <Faq/>
       <Brands/>
-      <SpringSale/>
     </>
   )
 }

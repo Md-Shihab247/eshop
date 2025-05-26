@@ -16,7 +16,7 @@ const MiddleLayer = () => {
 
         <div className=" flex justify-end items-center">
           <div className="relative ">
-            <input type="text"  placeholder="Search Products ..." className=" w-[332px] h-14 pl-6 pr-12 py-[18px] bg-white border border-[#303030] opacity-50 rounded-[10px]"/>
+            <input type="text"  placeholder={t("Search_Products")} className=" w-[332px] h-14 pl-6 pr-12 py-[18px] bg-white border border-[#303030] opacity-50 rounded-[10px]"/>
             <IoSearchOutline className=" absolute right-[24px] cursor-pointer top-[18px] h-5 w-5" />
           </div>
           <div className=" flex items-center justify-center gap-6 mr-[80px] ml-12">
