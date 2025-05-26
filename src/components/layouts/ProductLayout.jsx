@@ -3,14 +3,14 @@ import { IoMdStar } from 'react-icons/io'
 import CartIcon from "../icons/CartIcon2"
 import HeartIcon from "../icons/HeartIcon"
 import ShareIcon from "../icons/ShareIcon"
-const ProductLayout = ({catagory="it's missing",tittle="Title missing",price="price is not define",oldPrice,rating,bordering,discount,stack,starckAmount}) => {
+const ProductLayout = ({limited,padding,src="images/product-img.png", catagory="it's missing",tittle="Title missing",price="price is not define",oldPrice,rating,bordering,discount,stack,starckAmount}) => {
 
     let [ratings,setRatings] = useState(new Array(rating).fill(rating))
 
   return (
-    <div className={`flex flex-col bg-white rounded-[10px] duration-300 group border border-transparent ${bordering && `hover:border hover:border-[#CBCBCB]`}`}>
-        <div className='px-6 pt-6 relative'>
-            <img src="images/product-img.png" alt="product img" />
+    <div className={`${padding && `p-10`} flex flex-col bg-white rounded-[10px] duration-300 group border border-transparent ${bordering && `hover:border hover:border-[#CBCBCB]`}`}>
+        <div className={`${padding ? `px-0 pt-0` : `px-6 pt-6`} relative`}>
+            <img src={src} alt="product img" />
             {discount &&
               <div className=' absolute top-4 right-4 font-bold font-montserrat text-base leading-6 py-[7px] px-5 rounded-[5px] bg-[#FF624C] text-white'>50%</div>
             }
@@ -26,13 +26,13 @@ const ProductLayout = ({catagory="it's missing",tittle="Title missing",price="pr
                 </div>
             </div>
         </div>
-        <div className='pt-10 pb-11 px-6'>
+        <div className={`${padding ? `pt-10 pb-0 px-0` : `pt-10 pb-11 px-6`}`}>
             <span className='text-[#303030] font-montserrat text-sm font-normal leading-5 uppercase tracking-[5px]'>{catagory}</span>
             <p className='text-[#303030] font-poppins text-xl font-semibold leading-7.5 mt-4 duration-300 group-hover:text-[#FF624C] group-hover:underline'>{tittle}</p>
             <div className=' flex items-center mt-2'>
                 {ratings.map((star,index)=>{
 
-                   return  <IoMdStar key={index} className='text-yellow-400 h-4 w-4'/>
+                   return  <IoMdStar key={index} className={`text-yellow-400 h-4 w-4`}/>
 
                 })}
                 
@@ -44,8 +44,8 @@ const ProductLayout = ({catagory="it's missing",tittle="Title missing",price="pr
             </div>
             {stack &&
                 <div className=' bg-[#E0E0E0] w-full h-[30px] mt-8 rounded-[25px] relative'>
-                    <div className='top-0 left-0 h-[100%] w-1/2 rounded-[25px] z-10 bg-[#303030]'></div>
-                    <p className=' absolute top-[5px] left-[50%] translate-x-[-50%]  font-bold text-sm font-montserrat text-white leading-6'> {starckAmount} AVAILABLE</p>
+                    <div className={`top-0 left-0 h-[100%] ${limited ? `w-[97%]` : `w-1/2`} rounded-[25px] z-10 ${limited ? `bg-[#FF624C]` : `bg-[#303030]`}`}></div>
+                    <p className=' absolute top-[5px] left-[50%] translate-x-[-50%]  font-bold text-sm font-montserrat text-white leading-6'> {starckAmount} {limited ? limited : "AVAILABLE"}</p>
                 </div>
             }
         </div>
