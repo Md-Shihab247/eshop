@@ -56,16 +56,16 @@ const NewProduct = () => {
                 className=" relative flex items-center"> 
                   {selected 
                   ?
-                  <div  className=" flex items-center cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> {selected} <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} ml-[100px] text-black h-4 w-4 `}/></div>
+                  <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  text-black h-4 w-4 `}/> </div>
                   : 
-                  <div  className=" flex items-center cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={ `${isDropDownOpen && `rotate-180`} ml-[100px] text-black h-4 w-4`}/></div>
+                  <div  className=" flex items-center justify-between w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  text-black h-4 w-4`}/></div>
                   }
 
                 {isDropDownOpen && (
                     <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
                       {newProducts.map((item,index)=>{
 
-                      return <li onClick={()=> handleSelect(item.product)} className={` py-1.5 px-3 cursor-pointer hover:bg-[#ddd]`} key={index}> {item.product} </li>
+                      return <li onClick={()=> handleSelect(item.product)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.product} </li>
 
                       })}
                     </ul>
