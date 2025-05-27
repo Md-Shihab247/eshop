@@ -3,15 +3,16 @@ import Container from "../Container"
 import CartIcon from "../../icons/CartIcon"
 import UserIcon from "../../icons/UserIcon"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 const MiddleLayer = () => {
 
   let { t } = useTranslation();
 
   return (
     <Container >
-      <div className=" font-montserrat py-8 flex items-center justify-between">
+      <div className=" font-montserrat py-6 flex items-center justify-between">
         <div>
-          <img src="./images/logo.png" alt="logo" />
+          <Link to="/"><img src="./images/logo.png" alt="logo" /></Link>
         </div>
 
         <div className=" flex justify-end items-center">
