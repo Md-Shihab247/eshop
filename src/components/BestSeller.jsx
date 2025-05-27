@@ -12,7 +12,7 @@ const BestSeller = () => {
           <Link to='/' className=" flex gap-x-4 items-center text-[#FF624C] font-montserrat text-base font-bold leading-9">View All <ArrowRight/></Link>
         </div>
         <div className=" flex justify-between">
-          <div className=" flex  flex-wrap gap-[22px] max-w-[902px]">
+          <div className=" flex  flex-wrap gap-x-[22px] max-w-[902px]">
           <div className=" max-w-[285px]">
             <ProductLayout catagory={"AUDIO"} tittle={"Wireless Bluetooth Speaker Portable Sou..."} price={"$1,199.00"} rating={5} bordering={true} discount={false} stack={false} starckAmount={"50"} />
           </div>
