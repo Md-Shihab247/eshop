@@ -18,13 +18,13 @@ const ProductLayout = ({springDisAmount,springDiscount,limited,padding,src="imag
               <div className=' absolute top-0 right-0 font-bold font-montserrat text-base leading-6 flex items-center justify-center w-[100px] h-[100px] rounded-[50%] bg-[#FF624C] text-white'> {springDisAmount} </div>
             }
             <div className=' absolute bottom-[-100px] gap-x-4.5 left-[50%] opacity-0 duration-300 group-hover:bottom-[6px] group-hover:opacity-100 translate-x-[-50%] flex justify-center items-center'>
-                <div className=' h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] duration-300 hover:bg-[#FF624C] text-[#FF624C] group-[.group]:hover:text-white'>
+                <div className=' cursor-pointer h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] duration-300 hover:bg-[#FF624C] text-[#FF624C] group-[.group]:hover:text-white'>
                 <CartIcon />
                 </div>
-                <div className=' h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] text-[#FF624C] duration-300 hover:bg-[#FF624C] group-[.group]:hover:text-white'>
+                <div className=' cursor-pointer h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] text-[#FF624C] duration-300 hover:bg-[#FF624C] group-[.group]:hover:text-white'>
                 <HeartIcon/>
                 </div>
-                <div className=' h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] duration-300 hover:bg-[#FF624C] text-[#FF624C] group-[.group]:hover:text-white'>
+                <div className='cursor-pointer h-12.5 w-12.5 bg-white border border-[#FF624C] flex items-center justify-center rounded-[50%] duration-300 hover:bg-[#FF624C] text-[#FF624C] group-[.group]:hover:text-white'>
                 <ShareIcon/>
                 </div>
             </div>
@@ -42,7 +42,7 @@ const ProductLayout = ({springDisAmount,springDiscount,limited,padding,src="imag
                 <span className=' ml-2 font-montserrat text-base font-normal leading-6'>( 100 )</span>
             </div>
             <div  className=' flex items-center  mt-6'>
-            <div className='text-[#303030] font-poppins text-2xl font-semibold leading-7.5'> {price} </div>
+            <div className='text-[#303030] font-poppins text-2xl font-semibold leading-7.5 duration-300 group-hover:text-[#FF624C]'> {price} </div>
             <span className=' opacity-50 ml-2 mt-1 text-[#303030] text-base font-montserrat font-normal leading-6 line-through'> {oldPrice} </span>
             </div>
             {stack &&

@@ -3,7 +3,7 @@ import Container from "./layouts/Container"
 const Banner = () => {
   return (
     <>
-    <div className=" mt-8 mb-[80px]">
+    <div className=" mt-8">
         <Container>
             <Link to="\">
                 <img src="./images/banner.png" alt="" />

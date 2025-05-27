@@ -4,6 +4,7 @@ import CartIcon from "../../icons/CartIcon"
 import UserIcon from "../../icons/UserIcon"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
+import SearchIcon from "../../icons/SearchIcon"
 const MiddleLayer = () => {
 
   let { t } = useTranslation();
@@ -16,9 +17,10 @@ const MiddleLayer = () => {
         </div>
 
         <div className=" flex justify-end items-center">
-          <div className="relative ">
-            <input type="text"  placeholder={t("Search_Products")} className=" w-[332px] h-14 pl-6 pr-12 py-[18px] bg-white border border-[#303030] opacity-50 rounded-[10px]"/>
-            <IoSearchOutline className=" absolute right-[24px] cursor-pointer top-[18px] h-5 w-5" />
+          <div className="relative flex items-center ">
+            <input type="text"  placeholder={t("Search_Products")} className=" w-[332px] h-14 pl-6 pr-12 py-[18px] bg-white border border-[#979797] opacity-75 rounded-[10px] text-[#303030] font-montserrat text-sm font-normal leading-5"/>
+            {/* <IoSearchOutline className=" absolute right-[24px] cursor-pointer top-[18px] h-5 w-5" /> */}
+            <SearchIcon/>
           </div>
           <div className=" flex items-center justify-center gap-6 mr-[80px] ml-12">
             <CartIcon />

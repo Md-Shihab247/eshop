@@ -4,3 +4,9 @@
     --font-montserrat : "Montserrat", sans-serif;
     --font-poppins : "Poppins",sans-serif
 }
+
+.slick-slide {
+  width: 285px;
+  margin: 0 auto;
+  padding: 0 1px;
+}

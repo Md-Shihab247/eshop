@@ -8,7 +8,7 @@ const Facility = () => {
   return (
     <>
       <Container>
-        <div className=" flex justify-between items-center mb-[80px]">
+        <div className=" flex justify-between items-center my-[80px]">
           <div className=" flex items-center gap-x-6">
             <HeadPhone />
             <div>
