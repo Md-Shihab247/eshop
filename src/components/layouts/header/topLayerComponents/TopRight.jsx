@@ -84,14 +84,14 @@ const TopRight = () => {
             <>
               <img src={selected.flag} alt="" className=' scale-65'/>
               <span >{selected.name}</span>
-              <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
+              <MdKeyboardArrowDown className={`${isOpen ? `rotate-180` : `rotate-0`} transition-all ml-2 h-6 w-6`} />
             </>
             :
             
             <div className=' flex items-center'>
               <img src={countries[0].flag} alt="" className='scale-65'/>
               <span> {countries[0].name}</span>
-              <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
+              <MdKeyboardArrowDown className={`${isOpen ? `rotate-180` : `rotate-0`} transition-all ml-2 h-6 w-6`} />
             </div> 
             }
 

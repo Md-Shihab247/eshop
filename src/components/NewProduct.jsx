@@ -56,9 +56,9 @@ const NewProduct = () => {
                 className=" relative flex items-center"> 
                   {selected 
                   ?
-                  <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  text-black h-4 w-4 `}/> </div>
+                  <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
                   : 
-                  <div  className=" flex items-center justify-between w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  text-black h-4 w-4`}/></div>
+                  <div  className=" flex items-center justify-between w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
                   }
 
                 {isDropDownOpen && (
@@ -75,11 +75,21 @@ const NewProduct = () => {
           </div>
         </div>
           <div className=" flex gap-x-6">
-          <ProductLayout catagory={"PHONE"} tittle={"JPhone 13 High Quality Value Buy Best Cam..."} price={"$999.00"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
-          <ProductLayout catagory={"AUDIO"} tittle={"WH-1000XM4 Wireless Headphones High Qu..."} price={"$59.00"} rating={4} oldPrice={"$118.00"} discount={false} bordering={true} stack={false} starckAmount={"50"} />
-          <ProductLayout catagory={"LAPTOP"} tittle={"S21 Laptop Ultra HD LED Screen Feature 2023 ..."} price={"$1,199.00"} rating={3} bordering={true} discount={false} stack={false} starckAmount={"50"} />
-          <ProductLayout catagory={"CAMERA"} tittle={"Mini Polaroid Camera for Girls with Flash Li..."} price={"$79.00"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
-          <ProductLayout catagory={"TELEVISION"} tittle={"AG OLED65CXPUA 4K Smart OLED TV New ..."} price={"$2,799.00"} rating={2} bordering={true} discount={false} stack={false} starckAmount={"50"} />
+            <div className=" max-w-[285px]">
+                <ProductLayout catagory={"WATCH"} tittle={"Orange Watch 12 High Quality Health Sensor..."} price={"$959.99"} oldPrice={"$1,919.99"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
+            </div>
+            <div className=" max-w-[285px]">
+                <ProductLayout catagory={"TABLET"} tittle={"Ultra Tablet Qwerty HD 10765 Series Low Pri..."} price={"$799.00"} rating={4} discount={false} bordering={true} stack={false} starckAmount={"50"} />
+            </div>
+            <div className=" max-w-[285px]">
+                <ProductLayout catagory={"AUDIO"} tittle={"QuietComfort 45 Wireless Headphone..."} price={"$329.99"} rating={3} bordering={true} discount={false} stack={false} starckAmount={"50"} />
+            </div>
+            <div className=" max-w-[285px]">
+                <ProductLayout catagory={"LAPTOP"} tittle={"Surface Laptop 4 XPS 13 Plus 64GB i7 Touch ..."} price={"$2,399.99"} oldPrice={"$2,878.00"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
+            </div>
+            <div className=" max-w-[285px]">
+                <ProductLayout catagory={"CAMERA"} tittle={"CamPro HERO10 Black Sleek Design 2023 4K ..."} price={"$1,499.99"} rating={2} bordering={true} discount={false} stack={false} starckAmount={"50"} />
+            </div>
           </div>
           <div className=" mt-16 flex justify-center">
               <Button content={"Load More"} bg="transparent" color="#FF624C" border="1px solid #FF624C" />

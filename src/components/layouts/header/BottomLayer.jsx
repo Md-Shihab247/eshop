@@ -47,7 +47,7 @@ const BottomLayer = () => {
               <FaBars className=" h-5 w-5" />
               <button className="cursor-pointer" onClick={()=> setIsDropDownOpen1(!isDropDownOpen1)}> {t("All_Categories")} </button>
               {isDropDownOpen1 && (
-                <ul className="bg-[#fff] font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px]">
+                <ul className="bg-[#fff] rounded-[5px] overflow-hidden font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px]">
                   <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
                     Electronics
                   </li>
@@ -69,10 +69,10 @@ const BottomLayer = () => {
             <li ref={dropDownTwoRef} className=" relative">
               <button className=" flex items-center cursor-pointer"  onClick={() => setIsDropDownOpen2(!isDropDownOpen2)}>
                 {t("Products")}
-                <MdKeyboardArrowDown className=" ml-2 h-6 w-6" />
+                <MdKeyboardArrowDown className={`${isDropDownOpen2 ? `rotate-180` : `rotate-0`} transition-all ml-2 h-6 w-6`} />
               </button>
               {isDropDownOpen2 && (
-                <ul className="bg-[#fff] font-montserrat font-semibold absolute box-border top-8 left-[-45px] shadow-xl text-sm text-[#303030] w-[180px]">
+                <ul className="bg-[#fff] rounded-[5px] overflow-hidden  font-montserrat font-semibold absolute box-border top-8 left-[-45px] shadow-xl text-sm text-[#303030] w-[180px]">
                   <li className=" cursor-pointer border-b border-[#CBCBCB] px-5 py-3 hover:bg-[#DFE3E7]">
                     Gaming Consoles
                   </li>

@@ -64,7 +64,7 @@ const SpringSale = () => {
         dots: false,
         infinite: true,
         speed: 1500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -73,38 +73,41 @@ const SpringSale = () => {
   };
 
   return (
-     <div className="mb-[80px] py-16" style={{background: "url(images/springSaleBg.png)"}}>
+     <div className="py-16 bg-[#F4F4F4]" >
       <Container>
-        <div className=" flex justify-between items-center">
+        <div className=" flex items-center gap-x-[127px]">
 
-          <div className=" flex items-center"> 
-             <div className=" w-[450px]">
+          <div className=" max-w-[398px]"> 
+             <div className=" mt-[171px]">
                <h4 className=" font-poppins text-[#303030] text-[56px] font-bold leading-[68px]">Spring Sale</h4>
               <div className=" mt-10 font-poppins flex items-center gap-x-[30px] text-4xl font-semibold leading-[46px] text-[#FF624C]">
-                <div> {timerLeft.days < 10 ? "0" + timerLeft.days : timerLeft.days} </div>
+                <div> {timerLeft.days < 10 ? `0${timerLeft.days}`  : timerLeft.days} </div>
                 <span> : </span>
-                <div> {timerLeft.hours < 10 ? "0" + timerLeft.hours : timerLeft.hours} </div>
+                <div> {timerLeft.hours < 10 ? `0${timerLeft.hours}` : timerLeft.hours} </div>
                 <span> : </span>
-                <div> {timerLeft.minutes < 10 ? "0" + timerLeft.minutes : timerLeft.minutes} </div>
+                <div> {timerLeft.minutes < 10 ? `0${timerLeft.minutes}` : timerLeft.minutes} </div>
                 <span> : </span>
-                <div> {timerLeft.second} </div>
+                <div> {timerLeft.second < 10 ?  `0${timerLeft.second}` : timerLeft.second} </div>
               </div>
               <div className=" mt-2 mb-[72px] font-montserrat text-base text-[#303030] leading-6 font-normal flex items-center">
                 <div className=" ml-[3px]">Days</div>
                 <div className=" ml-[72px]">Hours</div>
                 <div className=" ml-[58px]">Minutes</div>
-                <div className=" ml-[48px]">Seconds</div>
+                <div className=" ml-[40px]">Seconds</div>
               </div>
               <Button content={"Shop Now"}/>
+              <div className=" mt-[90px]">
+                <img  src="images/springDots.png" alt="spring dots" />
+              </div>
              </div>
          </div>
           <div className=" w-[970px] rounded-[10px]">
                 <Slider {...settings}>
                     <div className=" max-w-[463px] rounded-[10px] mx-[15px]">
-                        <ProductLayout springDiscount={true} springDisAmount={"10%"} rating={5} padding={true} src="images/spring-card-bg1.png" catagory="TELEVISION" tittle="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB Movie..." price="$4,599.00" oldPrice="$5,058.00" stack={true} starckAmount={"50"} bordering={true}/>
+                        <ProductLayout springHover={true} springDiscount={true} springDisAmount={"10%"} rating={5} padding={true} src="images/spring-card-bg1.png" catagory="TELEVISION" tittle="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB Movie..." price="$4,599.00" oldPrice="$5,058.00" stack={true} starckAmount={"50"} bordering={false}/>
                     </div>
                     <div className=" max-w-[463px] rounded-[10px] mx-[15px]">
-                        <ProductLayout springDiscount={true} springDisAmount={"50%"} rating={5} padding={true} src="images/spring-card-bg1.png" catagory="CAMERA" tittle="VBI Mini 2 Fly More Combo Drone Sjrc F22S 4K Pro Ptz 5 Km Version Alpha..." price="$819.00" oldPrice="$1,638.00" limited={"LIMITED STOCK!"} stack={true} bordering={true}/>
+                        <ProductLayout springHover={true} springDiscount={true} springDisAmount={"50%"} rating={5} padding={true} src="images/spring-card-bg1.png" catagory="CAMERA" tittle="VBI Mini 2 Fly More Combo Drone Sjrc F22S 4K Pro Ptz 5 Km Version Alpha..." price="$819.00" oldPrice="$1,638.00" limited={"LIMITED STOCK!"} stack={true} bordering={false}/>
                     </div>
 
                 </Slider>

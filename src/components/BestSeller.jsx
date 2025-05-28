@@ -5,7 +5,7 @@ import ArrowRight from "./icons/ArrowRight";
 
 const BestSeller = () => {
   return (
-     <div className="mb-[80px]">
+     <div className="my-[80px]">
       <Container>
         <div className=" flex justify-between mb-12 max-w-[902px]">
           <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]">Best Seller</h3>
