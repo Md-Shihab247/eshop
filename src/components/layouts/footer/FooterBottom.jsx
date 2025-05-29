@@ -3,6 +3,9 @@ import Container from '../Container'
 import { Link } from 'react-router-dom'
 import { IoCall, IoLocationSharp } from 'react-icons/io5'
 import { IoIosMail } from 'react-icons/io'
+import FooterCallIcon from '../../icons/FooterCallIcon'
+import FooterEmailIcon from '../../icons/FooterEmailIcon'
+import FooterLocationIcon from '../../icons/FooterLocationIcon'
 
 const FooterBottom = () => {
   return (
@@ -10,23 +13,23 @@ const FooterBottom = () => {
       <Container>
           <div className=' flex items-start pb-[80px] border-b border-[#CBCBCB]'>
               <div className=' font-montserrat text-base font-normal leading-6 text-[#303030] mr-[167px]'>
-                <img src="./images/logo.png" alt="logo" className='mb-[158px]'/>
+                <Link to="/"><img src="./images/logo.png" alt="logo" className='mb-[158px]'/></Link>
                 <ul className=' flex flex-col gap-y-3'>
                   <li>
-                    <span className=" flex items-center gap-x-3">
-                    <IoCall className=' h-5 w-5'  />
+                    <span className=" cursor-pointer flex items-center gap-x-3">
+                    <FooterCallIcon/>
                     <Link to="tel: +1 (555) 123-4567">+1 (555) 123-4567</Link>
                     </span>
                   </li>
                   <li>
-                    <span className="flex items-center gap-x-3">
-                     <IoIosMail className=' h-5 w-5'/>
+                    <span className="cursor-pointer flex items-center gap-x-3">
+                     <FooterEmailIcon/>
                      <Link to="mailto:information@eshop.com">information@eshop.com</Link>
                     </span>
                   </li>
                   <li>
-                    <span className="flex items-center gap-x-3">
-                      <IoLocationSharp className=' h-5 w-5'/>
+                    <span className="cursor-pointer flex items-center gap-x-3">
+                      <FooterLocationIcon/>
                       <Link to="https://maps.app.goo.gl/n58JNE5g419y34Uc8" target="_blank">
                         123 Main Street, Suite 105, Anytown USA
                       </Link>

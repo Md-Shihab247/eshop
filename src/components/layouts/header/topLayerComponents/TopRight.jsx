@@ -15,7 +15,7 @@ const TopRight = () => {
     const countries = [
         { name: 'English', code: 'en', flag: 'https://flagcdn.com/w40/us.png' },
         { name: 'Bangali', code: 'bd', flag: 'https://flagcdn.com/w40/bd.png' },
-        { name: 'United Kingdom', code: 'UK', flag: 'https://flagcdn.com/w40/gb.png' },
+        { name: 'Arabic', code: 'sa', flag: 'https://flagcdn.com/w40/sa.png' },
         { name: 'Australia', code: 'AU', flag: 'https://flagcdn.com/w40/au.png' },
         { name: 'Germany', code: 'DE', flag: 'https://flagcdn.com/w40/de.png' },
         { name: 'France', code: 'FR', flag: 'https://flagcdn.com/w40/fr.png' },
@@ -96,7 +96,7 @@ const TopRight = () => {
             }
 
             {isOpen &&
-            <ul className=' absolute w-[210px] top-10 left-[-20px] bg-white shadow-xl z-50 font-montserrat text-[#303030] font-semibold text-sm'>
+            <ul className=' absolute rounded-[5px] overflow-hidden w-[210px] top-10 left-[-20px] bg-white shadow-xl z-50 font-montserrat text-[#303030] font-semibold text-sm'>
               {countries.map((country ,index)=>{
 
                   return <li key={index}

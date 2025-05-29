@@ -7,10 +7,12 @@ const BestSeller = () => {
   return (
      <div className="my-[80px]">
       <Container>
-        <div className=" flex justify-between mb-12 max-w-[902px]">
-          <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]">Best Seller</h3>
-          <Link to='/' className=" flex gap-x-4 items-center text-[#FF624C] font-montserrat text-base font-bold leading-9">View All <ArrowRight/></Link>
-        </div>
+        <div className=" flex gap-x-[74px]">
+         <div>
+           <div className=" flex justify-between mb-12 max-w-[902px]">
+             <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]">Best Seller</h3>
+             <Link to='/' className=" flex gap-x-4 items-center text-[#FF624C] font-montserrat text-base font-bold leading-9">View All <ArrowRight/></Link>
+          </div>
         <div className=" flex justify-between">
           <div className=" flex  flex-wrap gap-x-[22px] max-w-[902px]">
           <div className=" max-w-[285px]">
@@ -32,9 +34,9 @@ const BestSeller = () => {
             <ProductLayout catagory={"HOME"} tittle={"Wash Machine 11 KG Front Loading Steam ..."} price={"$5,699.00"} rating={2} oldPrice={"$6,268.00"} bordering={true} discount={true} stack={false} starckAmount={"50"} />
           </div>
           </div>
-         <div className="">
-            <img src="./images/bestSeller.png" alt="best-seller" />
+        </div>
          </div>
+         <img src="./images/bestSeller.png" alt="best-seller" />
         </div>
       </Container>
     </div>

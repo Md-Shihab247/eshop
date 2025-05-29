@@ -10,3 +10,7 @@
   margin: 0 auto;
   padding: 0 2px;
 }
+
+.spring_sale.slick-slider .slick-track {
+  @apply flex gap-6;
+}

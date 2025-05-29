@@ -8,11 +8,11 @@ const NewProduct = () => {
 
       const newProducts = [
         { product: 'All Catagories' },
-        { product: 'Beauty' },
-        { product: 'Home' },
+        { product: 'Computers'},
         { product: 'Electronics'  },
-        { product: 'Toys'},
-        { product: 'Books' },
+        { product: 'Smartphones' },
+        { product: 'Smart Watches' },
+        { product: 'Wearless devices' },
     ]
 
     let [isDropDownOpen,setIsDropDownOpen] = useState(false)
