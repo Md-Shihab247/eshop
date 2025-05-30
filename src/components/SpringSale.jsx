@@ -91,9 +91,9 @@ const SpringSale = () => {
               </div>
               <div className=" mt-2 mb-[72px] font-montserrat text-base text-[#303030] leading-6 font-normal flex items-center justify-between">
                 <div className=" relative left-0.5"> Days </div>
-                <div className="relative left-[13px]"> Hours </div>
-                <div className="relative left-[13px]"> Minutes </div>
-                <div> Seconds </div>
+                <div> Hours </div>
+                <div className=" relative right-[14px]"> Minutes </div>
+                <div className=" relative right-[25px]"> Seconds </div>
               </div>
               <Button content={"Shop Now"}/>
               <div className=" mt-[90px]">

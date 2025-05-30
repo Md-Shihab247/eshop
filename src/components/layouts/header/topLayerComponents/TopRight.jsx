@@ -5,6 +5,9 @@ import { RiTwitterFill } from 'react-icons/ri'
 import { TiSocialFacebook } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
 import i18n from '../../../../i18n'
+import FacebookIcon from '../../../icons/FacebookIcon'
+import TwitterIcon from '../../../icons/TwitterIcon'
+import InstagramIcon from '../../../icons/InstagramIcon'
 const TopRight = () => {
 
     let [selected,setSelected] = useState(null)
@@ -48,7 +51,7 @@ const TopRight = () => {
   return (
     <div className=' uppercase flex items-center justify-end relative gap-[50px] text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[65%] before:h-8 before:w-[1px] before:bg-[#CBCBCB] after:absolute after:left-[20%] after:h-8 after:w-[1px] after:bg-[#CBCBCB]'>
       <div>
-        <select name="currency" className=' outline-hidden' >
+        <select name="currency" className=' outline-hidden w-[62px]' >
           <option value="USD">USD</option>
           <option value="BDT">BDT</option>
           <option value="EUR">EUR </option>
@@ -116,13 +119,13 @@ const TopRight = () => {
       </div>
       <div className=' flex items-center justify-center gap-6'>
           <Link>
-          <TiSocialFacebook className=' h-6 w-6'/>
+             <FacebookIcon/>
           </Link>
           <Link>
-          <RiTwitterFill className=' h-5 w-5'/>
+             <TwitterIcon/>
           </Link>
           <Link>
-          <IoLogoInstagram className=' h-5 w-5'/>
+             <InstagramIcon/>
           </Link>
       </div>
     </div>
