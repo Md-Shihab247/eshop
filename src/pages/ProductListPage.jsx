@@ -137,7 +137,7 @@ const ProductListPage = () => {
                   </div>
 
                   <div className=' mt-7.5'>
-                     <div className=' relative w-full h-0.5 bg-[#ddd] rounded'>
+                     <div className=' relative w-full h-0.5 bg-[#C3C3C3] rounded'>
                        <div 
                        className={` absolute bg-[#FF624C] rounded h-full`}
                        style={{left: `${minParcet}%`, width: `${maxParcet - minParcet}%`}}
