@@ -34,7 +34,7 @@ const SpringSale = () => {
 
   function calculateTimeLeft() {
 
-    let sellEndTime = new Date("May 31, 2025 11:59:59 PM +06").getTime();
+    let sellEndTime = new Date("August 31, 2025 11:59:59 PM +06").getTime();
     let now = new Date().getTime();
     let difference = sellEndTime - now;
     if (difference < 0) {

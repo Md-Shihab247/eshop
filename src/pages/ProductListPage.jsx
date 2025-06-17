@@ -32,6 +32,9 @@ const ProductListPage = () => {
    let [index2, setIndex2] = useState([]);
    let [minValue,setMinValue] = useState(0)
    let [maxValue,setMaxValue] = useState(1000)
+   
+  // Checkbox portion start here ....
+
     let handleSelect = (indexed)=>{       
       if (index.includes(indexed)) {
           setIndex((prev)=> prev.filter((num)=> num !== indexed))
@@ -52,23 +55,44 @@ const ProductListPage = () => {
        
     }
     
+    // Range slider portion start here ....
 
     let updateSlider = (type,value)=>{
-        console.log(value);
+        // console.log(value);
         
-        if (type === "min") {
-          let newMin = Math.min(parseInt(value), maxValue)
-          setMinValue(newMin)
-        }
-        else{
+        let newMin = Math.min(parseInt(value), maxValue)
+        let newMax = Math.max(parseInt(value), minValue)
+       
+            if (type === "min") {
+              setMinValue(newMin)
+            }
+           else{
           
-          let newMax = Math.max(parseInt(value), minValue)
-          setMaxValue(newMax)
+              setMaxValue(newMax)
+              }
+    }
+
+    let handleInputMin = (value)=>{
+        
+      if (value === "") {
+        setMinValue(0)
+        }else{
+
+          if (value >= 0 && value <= maxValue) {
+            setMinValue(value)
+          }
+        }
+      }
+      
+      let handleInputMax = (value)=>{
+      
+        if ( minValue <= value && value <= 1000) {
+          setMaxValue(value)
         }
     }
 
-  let minParcet = (minValue / 1000) * 100 
-  let maxParcet = (maxValue / 1000) * 100 
+  let minParcet = minValue <= 1000 && (minValue / 1000) * 100 
+  let maxParcet = maxValue <= 1000 && (maxValue / 1000) * 100 
 
   return (
     <div className='mt-16'>
@@ -132,8 +156,8 @@ const ProductListPage = () => {
                 {isDropDownOpen3 && 
                 <div>
                   <div className=' flex justify-between'>
-                    <div className='h-[74px] w-[124px] flex items-center justify-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]'> ${minValue} </div>
-                    <div className='h-[74px] w-[124px] flex items-center justify-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]'> ${maxValue} </div>
+                    <input onChange={(e)=> handleInputMin(e.target.value)} className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' type="number" value={minValue} max={1000} min={0}/>
+                    <input onChange={(e)=> handleInputMax(e.target.value)} className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' type="number" value={maxValue} max={1000} min={0} />
                   </div>
 
                   <div className=' mt-7.5'>

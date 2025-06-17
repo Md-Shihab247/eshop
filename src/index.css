@@ -35,5 +35,13 @@ input[type=range]::-moz-progress-bar{
 }
 
 
+input[type=number]::-webkit-outer-spin-button{
+    appearance: none;
+}
+input[type=number]::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+
 
 
