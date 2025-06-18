@@ -15,9 +15,15 @@ const PaginationProducts = () => {
 
   let startIndex = (currentPage - 1 )* itemsParPage
   let currentProducts = products.slice(startIndex, startIndex + itemsParPage)
-
+    console.log(currentProducts);
+    
   return (
-    <div className='w-full flex flex-wrap'>
+      <div>
+         <div className='mb-12'>
+            <h1 className=' text-[#303030] font-poppins text-4xl font-semibold leading-[46px]'>Products</h1>
+            <p className='mt-6 text-[#303030] font-montserrat text-base font-normal leading-6'>Showing {currentProducts[0].id} - {currentProducts[15].id} of {products.length} results.</p>
+          </div>
+        <div className='w-full flex flex-wrap'>
           {currentProducts.map((item,index)=>{
 
            return <div key={index} className='max-w-[285px]'>
@@ -36,16 +42,17 @@ const PaginationProducts = () => {
           })
           
           }
+         </div>
 
-          <div className='mx-auto'>
-            <Pagination
-            totalProducts={products.length}
-            parPageProducts={itemsParPage}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-          />
-          </div>
-    </div>
+              <div className='mx-auto'>
+                <Pagination
+                totalProducts={products.length}
+                parPageProducts={itemsParPage}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+              />
+              </div>
+      </div>
   )
 }
 

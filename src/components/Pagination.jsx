@@ -1,5 +1,9 @@
 /* eslint-disable no-unused-vars */
 
+import PaginationArrowLeftIcon from "../components/icons/PaginationArrowLeftIcon"
+import PaginationArrowRightIcon from "../components/icons/PaginationArrowRightIcon"
+
+
 const Pagination = ({
   totalProducts,
   parPageProducts,
@@ -23,29 +27,17 @@ const Pagination = ({
   for (let i = startPage; i <= endPage; i++) {
     pagesNo.push(i);
   }
-
+  
   return (
-    <div className=" flex" >
-      <button
-        className="bg-[#ddddddcb] cursor-pointer text-[32px] h-10 w-10 flex items-center justify-center rounded-[5px]"
-        disabled={currentPage === 1}
-        onClick={() => onPageChange(currentPage - 1)}
-        >
-        <span className="mb-2">&lt;</span>
-      </button>
+    <div className=" flex justify-center my-20" >
+        
+        <PaginationArrowLeftIcon currentPage={currentPage} pageChange={onPageChange} />      
 
         {pagesNo.map((number,index)=>{
-               return <button onClick={()=>{onPageChange(number)}} key={index} className={` ${(currentPage - 1) == index ? "bg-[#FF624C] text-white" : "bg-[#ddd] text-[#303030]"} mx-2 text-[#303030] font-poppins text-xl font-semibold leading-7.5 cursor-pointer h-10 w-10 flex items-center justify-center rounded-[5px]`} > {number} </button>
+               return <button onClick={()=>{onPageChange(number)}} key={index} className={`${currentPage - 1 == index && "bg-[#FF624C] text-white"}  mx-2 text-[#303030] font-poppins text-xl font-semibold leading-7.5 cursor-pointer h-10 w-10 flex items-center justify-center rounded-[5px] transition-all ${currentPage - 1 != index && "hover:bg-[#ddd]"}`} > {number} </button>
         })
         }
-
-      <button
-        className=" bg-[#ddddddcb] text-[32px] cursor-pointer h-10 w-10 flex items-center justify-center rounded-[5px]"
-        disabled={currentPage === totalPages}
-        onClick={() => onPageChange(currentPage + 1)}
-      >
-        <span className="mb-2">&gt;</span>
-      </button>
+        <PaginationArrowRightIcon isDisabled={totalPages} pageChange={onPageChange} currentPage={currentPage}/>
     </div>
   );
 };
