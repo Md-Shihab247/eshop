@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Container from '../components/layouts/Container'
 import { IoIosArrowDown } from 'react-icons/io'
 import CheckIcon from '../components/icons/CheckIcon'
-
+import PaginationProducts from '../components/PaginationProducts'
   let Categories = [
     { id: 1, name: 'Computers & Tablets' },
     { id: 2, name: 'Mobile & Accessories' },
@@ -73,7 +73,6 @@ const ProductListPage = () => {
     }
 
     let handleInputMin = (value)=>{
-        
       if (value === "") {
         setMinValue(0)
         }else{
@@ -97,13 +96,13 @@ const ProductListPage = () => {
   return (
     <div className='mt-16'>
       <Container>
-      <div className=' flex'>
-
+      <div className=' flex justify-between'>
+                                                    {/* Catagories portion  */}
         <div className='w-[355px] max-h-[1057px] box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
           <div className='w-full'> 
              
-                                                      {/* Categories Dropdown  */} 
-              <div >
+                                                    {/* Categories Dropdown  */} 
+              <div>
                <div onClick={()=> setIsDropDownOpen(!isDropDownOpen)} className=' mb-5 flex items-center justify-between'>
                   <h4 className=' cursor-pointer font-montserrat text-xl text-[#303030] font-bold  leading-7.5'>Categories</h4>
                   <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} cursor-pointer transition-all text-black h-4 w-4 `}/>
@@ -146,7 +145,7 @@ const ProductListPage = () => {
               </div>
 
               <hr className=' text-[#C3C3C3] w-full my-10'/>
-
+                                                    {/* Price portion  */}
              <div>
                 <div onClick={()=> setIsDropDownOpen3(!isDropDownOpen3)} className=' mb-5 flex items-center justify-between'>
                     <h4 className=' cursor-pointer font-montserrat text-xl text-[#303030] font-bold  leading-7.5'>Price</h4>
@@ -155,7 +154,7 @@ const ProductListPage = () => {
 
                 {isDropDownOpen3 && 
                 <div>
-                  <div className=' flex justify-between'>
+                  <div className=' flex gap-x-[11px]'>
                     <input onChange={(e)=> handleInputMin(e.target.value)} className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' type="number" value={minValue} max={1000} min={0}/>
                     <input onChange={(e)=> handleInputMax(e.target.value)} className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' type="number" value={maxValue} max={1000} min={0} />
                   </div>
@@ -196,8 +195,11 @@ const ProductListPage = () => {
           </div>
 
         </div>
-
-        <div className='w-[75%]'>Products</div>
+                                  {/* pagination portion  */}
+        <div className='max-w-[1140px]'>
+          <PaginationProducts/>
+        </div>
+        
       </div>
     </Container>
     </div>
