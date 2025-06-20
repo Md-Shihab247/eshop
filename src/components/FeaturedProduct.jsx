@@ -30,8 +30,11 @@ const FeaturedProduct = () => {
       infinite: true,
       speed: 500,
       slidesToShow: 5,
-      // autoplay: true,
-      autoplaySpeed: 1000,
+      centerMode: true,
+      centerPadding: "0px",
+      className: "center",
+      autoplay: true,
+      autoplaySpeed: 2000,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />
@@ -46,7 +49,7 @@ const FeaturedProduct = () => {
         </div>
           <div className=" max-w-[1440px] mx-auto">
             <Slider {...settings}>
-            <div className="slick-slide">
+            <div className="slick-slide active">
                <ProductLayout 
                catagory={"PHONE"}
                tittle={"JPhone 13 High Quality Value Buy Best Cam..."}
@@ -56,7 +59,7 @@ const FeaturedProduct = () => {
                stack={false}
                starckAmount={"50"} />
             </div>
-            <div className="slick-slide">
+            <div className="slick-slide active">
                <ProductLayout 
                catagory={"AUDIO"}
                tittle={"WH-1000XM4 Wireless Headphones High Qu..."}
@@ -68,7 +71,7 @@ const FeaturedProduct = () => {
                stack={false}
                starckAmount={"50"} />
             </div>
-            <div className="slick-slide">
+            <div className="slick-slide active">
                <ProductLayout 
                catagory={"LAPTOP"}
                tittle={"S21 Laptop Ultra HD LED Screen Feature 2023 ..."}
@@ -78,7 +81,7 @@ const FeaturedProduct = () => {
                stack={false}
                starckAmount={"50"} />
             </div>
-            <div className="slick-slide">
+            <div className="slick-slide active">
                <ProductLayout 
                catagory={"CAMERA"}
                tittle={"Mini Polaroid Camera for Girls with Flash Li..."}
@@ -88,7 +91,7 @@ const FeaturedProduct = () => {
                stack={false}
                starckAmount={"50"} />
             </div>
-            <div className="slick-slide">
+            <div className="slick-slide active">
                <ProductLayout 
                catagory={"TELEVISION"}
                tittle={"AG OLED65CXPUA 4K Smart OLED TV New ..."}
@@ -98,7 +101,7 @@ const FeaturedProduct = () => {
                stack={false}
                starckAmount={"50"} />
             </div>
-            <div className="slick-slide">
+            <div className="slick-slide active">
                <ProductLayout 
                catagory={"TELEVISION"}
                tittle={"AG OLED65CXPUA 4K Smart OLED TV New ..."}

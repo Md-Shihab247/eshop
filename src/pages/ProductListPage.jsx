@@ -3,6 +3,7 @@ import Container from '../components/layouts/Container'
 import { IoIosArrowDown } from 'react-icons/io'
 import CheckIcon from '../components/icons/CheckIcon'
 import PaginationProducts from '../components/PaginationProducts'
+import { Bounce, toast } from 'react-toastify'
   let Categories = [
     { id: 1, name: 'Computers & Tablets' },
     { id: 2, name: 'Mobile & Accessories' },
@@ -58,40 +59,35 @@ const ProductListPage = () => {
     // Range slider portion start here ....
 
     let updateSlider = (type,value)=>{
-        // console.log(value);
         
-        let newMin = Math.min(parseInt(value), maxValue)
-        let newMax = Math.max(parseInt(value), minValue)
-       
-            if (type === "min") {
-              setMinValue(newMin)
-            }
-           else{
-          
-              setMaxValue(newMax)
-              }
-    }
+        let newValue = parseInt(value)
 
-    let handleInputMin = (value)=>{
-      if (value === "") {
-        setMinValue(0)
-        }else{
-
-          if (value >= 0 && value <= maxValue) {
-            setMinValue(value)
-          }
+        if (isNaN(newValue)) return
+        if( newValue < 0 || newValue > 1000) {
+            toast.error('Minimum & Maximum price must be between 0 and 1000 !', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+            });
+            return
+        }     
+        if (type === "min") {
+           newValue > maxValue ? setMinValue(maxValue) : setMinValue(newValue)
         }
-      }
-      
-      let handleInputMax = (value)=>{
-      
-        if ( minValue <= value && value <= 1000) {
-          setMaxValue(value)
+        else{
+          newValue < minValue ? setMaxValue(minValue) : setMaxValue(newValue)
         }
     }
 
-  let minParcet = minValue <= 1000 && (minValue / 1000) * 100 
-  let maxParcet = maxValue <= 1000 && (maxValue / 1000) * 100 
+
+  let minParcet = (minValue / 1000) * 100 
+  let maxParcet = (maxValue / 1000) * 100 
 
   return (
     <div className='mt-16'>
@@ -100,7 +96,6 @@ const ProductListPage = () => {
                                                     {/* Catagories portion  */}
         <div className='w-[355px] max-h-[1057px] box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
           <div className='w-full'> 
-             
                                                     {/* Categories Dropdown  */} 
               <div>
                <div onClick={()=> setIsDropDownOpen(!isDropDownOpen)} className=' mb-5 flex items-center justify-between'>
@@ -155,15 +150,29 @@ const ProductListPage = () => {
                 {isDropDownOpen3 && 
                 <div>
                   <div className=' flex gap-x-[11px]'>
-                    <input onChange={(e)=> handleInputMin(e.target.value)} className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' type="number" value={minValue} max={1000} min={0}/>
-                    <input onChange={(e)=> handleInputMax(e.target.value)} className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' type="number" value={maxValue} max={1000} min={0} />
+                    <input 
+                       onChange={(e)=> updateSlider("min",e.target.value)}
+                       className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' 
+                       type="number"
+                       value={minValue}
+                       step={10}
+                       max={1000}
+                       min={0}/>
+                    <input 
+                      onChange={(e)=> updateSlider("max",e.target.value)}
+                       className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' 
+                      type="number"
+                      value={maxValue}
+                      step={10}
+                      max={1000}
+                      min={0} />
                   </div>
 
                   <div className=' mt-7.5'>
                      <div className=' relative w-full h-0.5 bg-[#C3C3C3] rounded'>
                        <div 
                        className={` absolute bg-[#FF624C] rounded h-full`}
-                       style={{left: `${minParcet}%`, width: `${maxParcet - minParcet}%`}}
+                       style={{left: `${minParcet}%`, width: `${(maxParcet - minParcet) > 100 ? 100 : (maxParcet - minParcet)}%`}}
                        ></div>
 
                        <input 
