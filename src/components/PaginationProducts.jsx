@@ -7,15 +7,14 @@ const PaginationProducts = () => {
        let [currentPage,setCurrentPage] = useState(1)
        let itemsParPage = 16
     
-    let products = Array.from({length : 160} ,(_,index)=>({
+    let products = Array.from({length : 200} ,(_,index)=>({
             id: index + 1,
             name : `product ${index + 1}`,
             price : (Math.random() * 1000).toFixed(2)
     }))
 
-  let startIndex = (currentPage - 1 )* itemsParPage
+  let startIndex = (currentPage - 1 ) * itemsParPage
   let currentProducts = products.slice(startIndex, startIndex + itemsParPage)
-    console.log(currentProducts);
     
   return (
       <div>
