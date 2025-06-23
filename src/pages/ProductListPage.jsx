@@ -94,7 +94,8 @@ const ProductListPage = () => {
       <Container>
       <div className=' flex justify-between'>
                                                     {/* Catagories portion  */}
-        <div className='w-[355px] max-h-[1057px] box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
+        <div>
+          <div className='w-[355px] box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
           <div className='w-full'> 
                                                     {/* Categories Dropdown  */} 
               <div>
@@ -202,7 +203,7 @@ const ProductListPage = () => {
              </div>
 
           </div>
-
+        </div>
         </div>
                                   {/* pagination portion  */}
         <div className='max-w-[1140px]'>
