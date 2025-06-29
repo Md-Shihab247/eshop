@@ -50,6 +50,25 @@ input[type=number]::-webkit-inner-spin-button{
     appearance: none;
 }
 
+.checkmark{
+  visibility: hidden;
+  position: absolute; 
+  top: 7px;
+  left: 3.26px;
+  font-size: 10px;
+  color: white;
+  z-index: 999;
+}
+.checkbox:checked + .checkmark{
+  visibility: visible;
+}
+
+
+
+
+
+
+
 
 
 

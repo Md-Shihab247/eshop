@@ -4,6 +4,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 import CheckIcon from '../components/icons/CheckIcon'
 import PaginationProducts from '../components/PaginationProducts'
 import { Bounce, toast } from 'react-toastify'
+import { GoCheck } from 'react-icons/go'
   let Categories = [
     { id: 1, name: 'Computers & Tablets' },
     { id: 2, name: 'Mobile & Accessories' },
@@ -34,27 +35,7 @@ const ProductListPage = () => {
    let [minValue,setMinValue] = useState(0)
    let [maxValue,setMaxValue] = useState(1000)
    
-  // Checkbox portion start here ....
 
-    let handleSelect = (indexed)=>{       
-      if (index.includes(indexed)) {
-          setIndex((prev)=> prev.filter((num)=> num !== indexed))
-      }
-      else{
-        setIndex([...index, indexed])
-      }
-       
-    }
-    
-    let handleSelect2 = (indexed)=>{       
-      if (index2.includes(indexed)) {
-          setIndex2((prev)=> prev.filter((num)=> num !== indexed))
-       }
-      else{
-        setIndex2([...index2, indexed])
-       }
-       
-    }
     
     // Range slider portion start here ....
 
@@ -105,14 +86,15 @@ const ProductListPage = () => {
                </div>
 
                {isDropDownOpen &&        
-                <ul className={ ` overflow-hidden transition-all`}> 
-                    {Categories.map((category,indexed) => (
-                      <li onClick={()=> handleSelect(indexed)} key={category.id}  className={`${index === index && `click`}  flex cursor-pointer gap-x-2 items-center mt-3`}>
-                        <CheckIcon isChecked={index.includes(indexed)}/>
-                        <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 ${index.includes(indexed) ? "font-bold" : "font-normal"}`}>{category.name}</span>
-                      </li>
+                <div className={ ` overflow-hidden transition-all`}> 
+                    {Categories.map((category) => (
+                      <label key={category.id}  className={` relative  flex cursor-pointer gap-x-2 items-center mt-3`}>
+                        <input type="checkbox" className='checkbox  appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
+                        <GoCheck  className=' checkmark'/>
+                        <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 font-normal`}>{category.name}</span>
+                      </label>
                     ))}
-                </ul>
+                </div>
               }   
               </div>
 
@@ -125,18 +107,19 @@ const ProductListPage = () => {
                   </div>
 
                 {isDropDownOpen2 &&        
-                  <ul className={ ` overflow-hidden transition-all`}> 
-                      {Brands.map((category,indexed) => (
-                        <li onClick={()=> handleSelect2(indexed)} key={category.id}  className={`${index === index && `click`}  flex cursor-pointer justify-between items-center mt-3`}>
+                  <div className={ ` overflow-hidden transition-all`}> 
+                      {Brands.map((category) => (
+                        <label key={category.id}  className={` flex cursor-pointer justify-between items-center mt-3`}>
                           <span className=' gap-x-2 flex items-center'>
-                          <CheckIcon isChecked={index2.includes(indexed)}/>
-                          <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 ${index2.includes(indexed) ? "font-bold" : "font-normal"}`}>{category.name}</span>
+                            <input key={category.id} type="checkbox" className='checkbox appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
+                            <GoCheck className= 'checkmark'/>
+                            <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 font-normal`}>{category.name}</span>
                           </span>
                           <span className='text-[#303030] font-montserrat text-base font-normal leading-6'> {category.available} </span>
-                        </li>
+                        </label>
                       ))}
                       <a href='#' className=' inline-block text-[#303030] text-base font-montserrat font-bold leading-6 mt-5 underline underline-offset-5'>More Brands</a>
-                  </ul>
+                  </div>
                 }   
               </div>
 
