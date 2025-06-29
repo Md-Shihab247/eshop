@@ -109,10 +109,10 @@ const ProductListPage = () => {
                 {isDropDownOpen2 &&        
                   <div className={ ` overflow-hidden transition-all`}> 
                       {Brands.map((category) => (
-                        <label key={category.id}  className={` flex cursor-pointer justify-between items-center mt-3`}>
+                        <label key={category.id}  className={` relative flex cursor-pointer justify-between items-center mt-3`}>
                           <span className=' gap-x-2 flex items-center'>
-                            <input key={category.id} type="checkbox" className='checkbox appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
-                            <GoCheck className= 'checkmark'/>
+                            <input key={category.id} name={category.name} type="checkbox" className='checkbox appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
+                             <GoCheck className='checkmark' />
                             <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 font-normal`}>{category.name}</span>
                           </span>
                           <span className='text-[#303030] font-montserrat text-base font-normal leading-6'> {category.available} </span>
