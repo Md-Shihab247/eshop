@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import Container from '../components/layouts/Container'
 import { IoIosArrowDown } from 'react-icons/io'
 import CheckIcon from '../components/icons/CheckIcon'
@@ -32,8 +32,6 @@ const ProductListPage = () => {
    let [isDropDownOpen3, setIsDropDownOpen3] = useState(true);
    const [isChecked, setIsChecked] = useState([]);
    const [isChecked2, setIsChecked2] = useState([]);
-  //  let [indexArr,setIndexArr] = useState([])
-  // let [active,setActive] = useState(false)
    let [minValue,setMinValue] = useState(0)
    let [maxValue,setMaxValue] = useState(1000)
 
