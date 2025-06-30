@@ -76,10 +76,10 @@ const ProductListPage = () => {
   return (
     <div className='mt-16'>
       <Container>
-      <div className=' flex justify-between'>
+      <div className=' flex justify-between relative'>
                                                     {/* Catagories portion  */}
         <div>
-          <div className='w-[355px] box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
+          <div className='w-[355px] mb-[88px] sticky top-0 box-border p-12 bg-[#F4F4F4] rounded-[25px]'>
           <div className='w-full'> 
                                                     {/* Categories Dropdown  */} 
               <div>

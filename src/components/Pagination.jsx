@@ -9,22 +9,31 @@ const Pagination = ({
   onPageChange,
 }) => {
   let totalPages = Math.ceil(totalProducts / parPageProducts);
-  let maxPageShow = 10;
-  let pagesShowBeforeAfter = 3;
-  let startPage = Math.max(1, currentPage - pagesShowBeforeAfter);
-  let endPage = Math.min(totalPages, currentPage + pagesShowBeforeAfter);
+  let maxPageShow = 5;
+  let pages = []
 
-  if (endPage - startPage + 1 < maxPageShow) {
-    if (startPage > 1) {
-      startPage = Math.max(1, endPage - maxPageShow + 1);
-    }
-    endPage = Math.min(totalPages, startPage + maxPageShow - 1);
-  }
+  if ( totalPages <= maxPageShow) {
+       for (let i = 0; i < pages.length; i++) {
+         pages.push(i)
+       }
+  }else{
 
-  let pagesNo = [];
-  for (let i = startPage; i <= endPage; i++) {
-    pagesNo.push(i);
-  }
+      let startPages = [1,2,3]
+      let endPages = [totalPages]
+      let middlePage = [currentPage,currentPage + 1].filter((page) => page > 2 && page <= totalPages)
+
+      let uniquePages = Array.from(new Set([...startPages, ...middlePage, ...endPages])).sort((a,b)=> a - b)
+
+       for (let i = 0; i < uniquePages.length; i++) {
+            pages.push(uniquePages[i])
+
+            if (i < uniquePages.length -1 && uniquePages[i + 1] - uniquePages[i] > 1) {
+               if (!pages.includes("...")) {
+                  pages.push("...")
+               }
+             }
+           }
+        }
 
   return (
     <div className=" flex justify-center my-20">
@@ -34,7 +43,7 @@ const Pagination = ({
         isDisabled={currentPage === 1}
       />
 
-      {pagesNo.map((number) => {
+      {pages.map((number) => {
         return (
           <button
             onClick={() => {
