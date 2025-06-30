@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Container from '../components/layouts/Container'
 import { IoIosArrowDown } from 'react-icons/io'
 import CheckIcon from '../components/icons/CheckIcon'
@@ -30,19 +30,24 @@ const ProductListPage = () => {
    let [isDropDownOpen, setIsDropDownOpen] = useState(true);
    let [isDropDownOpen2, setIsDropDownOpen2] = useState(true);
    let [isDropDownOpen3, setIsDropDownOpen3] = useState(true);
-   let [index, setIndex] = useState([]);
-   let [index2, setIndex2] = useState([]);
+   const [isChecked, setIsChecked] = useState([]);
+   const [isChecked2, setIsChecked2] = useState([]);
+  //  let [indexArr,setIndexArr] = useState([])
+  // let [active,setActive] = useState(false)
    let [minValue,setMinValue] = useState(0)
    let [maxValue,setMaxValue] = useState(1000)
-   
 
-    
+    let handleCheck1 = (index)=>{
+        setIsChecked((prev)=> prev.includes(index) ? prev.filter((value)=> value !== index) : [...prev, index]) 
+    }
+    let handleCheck2 = (index)=>{
+        setIsChecked2((prev)=> prev.includes(index) ? prev.filter((value)=> value !== index) : [...prev, index]) 
+    }
+
     // Range slider portion start here ....
 
-    let updateSlider = (type,value)=>{
-        
+    let updateSlider = (type,value)=>{ 
         let newValue = parseInt(value)
-
         if (isNaN(newValue)) return
         if( newValue < 0 || newValue > 1000) {
             toast.error('Minimum & Maximum price must be between 0 and 1000 !', {
@@ -87,11 +92,11 @@ const ProductListPage = () => {
 
                {isDropDownOpen &&        
                 <div className={ ` overflow-hidden transition-all`}> 
-                    {Categories.map((category) => (
-                      <label key={category.id}  className={` relative  flex cursor-pointer gap-x-2 items-center mt-3`}>
-                        <input type="checkbox" className='checkbox  appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
+                    {Categories.map((category,index) => (
+                      <label key={category.id}  className={`label relative  flex cursor-pointer gap-x-2 items-center mt-3`}>
+                        <input onChange={()=> handleCheck1(index)} type="checkbox" className=' checkbox appearance-none rounded-[2px] h-4 w-4 border border-[#303030] group checked:bg-[#FF624C] checked:border-transparent'/>
                         <GoCheck  className=' checkmark'/>
-                        <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 font-normal`}>{category.name}</span>
+                        <span className={ `${isChecked.includes(index) ? "font-bold" : "font-normal"} text text-[#303030] text-base font-montserrat transition-all leading-6 `}>{category.name}</span>
                       </label>
                     ))}
                 </div>
@@ -108,12 +113,12 @@ const ProductListPage = () => {
 
                 {isDropDownOpen2 &&        
                   <div className={ ` overflow-hidden transition-all`}> 
-                      {Brands.map((category) => (
+                      {Brands.map((category,index) => (
                         <label key={category.id}  className={` relative flex cursor-pointer justify-between items-center mt-3`}>
                           <span className=' gap-x-2 flex items-center'>
-                            <input key={category.id} name={category.name} type="checkbox" className='checkbox appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
+                            <input onChange={()=> handleCheck2(index)} key={category.id} name={category.name} type="checkbox" className='checkbox appearance-none rounded-[2px] h-4 w-4 border border-[#303030] checked:bg-[#FF624C] checked:border-transparent'/>
                              <GoCheck className='checkmark' />
-                            <span className={ ` text-[#303030] text-base font-montserrat transition-all leading-6 font-normal`}>{category.name}</span>
+                            <span className={ `${isChecked2.includes(index) ? "font-bold" : "font-normal"} text-[#303030] text-base font-montserrat transition-all leading-6`}>{category.name}</span>
                           </span>
                           <span className='text-[#303030] font-montserrat text-base font-normal leading-6'> {category.available} </span>
                         </label>

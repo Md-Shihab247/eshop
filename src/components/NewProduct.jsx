@@ -20,24 +20,18 @@ const NewProduct = () => {
     let dropdownRef = useRef(null)
 
     useEffect(()=>{
-
         let handleDropDown = (event)=>{
-
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setIsDropDownOpen(false)
-            }
-        }
+            }}
 
         document.addEventListener('click',handleDropDown)
         return ()=>{
         document.removeEventListener('click',handleDropDown)
         }
-
     },[])
 
     let handleSelect = (item)=>{
-      console.log(selected);
-      
       setSelected(item)
       setIsDropDownOpen(false)
 
