@@ -9,11 +9,12 @@ const Button = ({
   paddingX = "40px",
   paddingY = "16px",
   radious = "10",
-  border="none"
+  border="none",
+  isOpacity
 }) => {
   return (
     <button
-      className=" cursor-pointer"
+      className={` relative cursor-pointer ${isOpacity && " before:absolute before:top-0 before:left-0 before:h-full before:w-full before:border before:border-[#303030] before:rounded-[5px] before:opacity-50"}`}
       style={{
         background: `${bg}`,
         color: `${color}`,

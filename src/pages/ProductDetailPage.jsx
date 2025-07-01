@@ -1,12 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import Container from "../components/layouts/Container";
 import Slider from "react-slick";
-import { IoMdClose, IoMdStar } from "react-icons/io";
+import {IoMdStar } from "react-icons/io";
 import FullScreenIcon from "../components/icons/FullScreenIcon";
 import { MdClose } from "react-icons/md";
-
+import Button from "../components/Button"
+import Transparent from "../components/icons/Transparent"
+import Shipping from "../components/icons/Shipping"
+import Secure from "../components/icons/Secure"
+import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
+import CartIcon from "../components/icons/CartIcon2"
 function ProductDetailPage() {
   const [active, setAvtive] = useState(false);
+  let [quantity,setQuantity] = useState(1)
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const sliderRef1 = useRef(null);
@@ -51,8 +57,8 @@ function ProductDetailPage() {
           </span>
         </div>
 
-        <div className=" mt-12 flex justify-between gap-x-[56px]">
-          <div className=" w-[50%]">
+        <div className=" mt-12 flex gap-x-[56px]">
+          <div className=" w-[54%]">
             <Slider {...settings} asNavFor={nav2} ref={sliderRef1}>
               <div>
                 <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
@@ -151,7 +157,7 @@ function ProductDetailPage() {
             </Slider>
           </div>
 
-          <div className="w-[50%]">
+          <div className="w-[46%]">
             <div>
               <div className=" flex items-center">
                 <IoMdStar className={`text-yellow-400 h-4 w-4`} />
@@ -176,6 +182,87 @@ function ProductDetailPage() {
                 <small className=" relative top-[27px] font-montserrat text-xl text-[ #303030] font-normal leading-7.5 opacity-50 line-through">
                   $5,499.99
                 </small>
+              </div>
+
+              <div className=" max-w-[630px] mt-12 flex gap-x-[87px]">
+                <ul className="text-[#303030] font-poppins font-semibold leading-7.5 text-xl [&>li]:mb-4">
+                    <li>Brand</li>
+                    <li>Size</li>
+                    <li>Weight</li>
+                    <li>Delivery</li>
+                    <li>Variant</li>
+                </ul>
+                <ul className="text-[#303030] font-montserrat font-normal leading-7.5 text-xl [&>li]:mb-4">
+                    <li>NexSUS Tech Company</li>
+                    <li>15.7 x 11.1 x 1.0 inches (W x D x H)</li>
+                    <li>6.28 pounds</li>
+                    <li>Worldwide</li>
+                <div className=" flex gap-x-1 flex-wrap">
+                    <Button isOpacity={true} content={"Off White"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#303030" size="16px"/>
+                    <Button isOpacity={true} content={"Space Gray"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#FF624C" size="16px"/>
+                    <Button isOpacity={true} content={"Jet Black"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#303030" size="16px"/>
+                    <button className="text-[#303030] mt-2 font-montserrat font-bold text-base leading-6 opacity-25 px-8 py-4 border border-[#303030] rounded-[5px] bg-white cursor-pointer">Cinnamon Red</button>
+                </div>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className=" flex items-center justify-between mt-[50px] gap-x-[94px] mb-[100px]">
+          <div className=" flex gap-x-12 items-center">
+              <div className=" flex items-center gap-x-6">
+                <Shipping />
+                <div>
+                  <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
+                    Free Shipping
+                  </h3>
+                  <p className=" font-montserrat text-[#303030] text-base font-normal mt-0.5 leading-6">
+                    Worldwide available
+                  </p>
+                </div>
+              </div>
+
+              <div className=" flex items-center gap-x-6">
+                <Secure />
+                <div>
+                  <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
+                    100% Guaranteed
+                  </h3>
+                  <p className=" font-montserrat text-[#303030] text-base font-normal mt-0.5 leading-6">
+                    Receive product first
+                  </p>
+                </div>
+              </div>
+
+              <div className=" flex items-center gap-x-6">
+                <Transparent />
+                <div>
+                  <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
+                    Return Available
+                  </h3>
+                  <p className=" font-montserrat text-[#303030] text-base font-normal mt-0.5 leading-6">
+                    See return policy
+                  </p>
+                </div>
+              </div>
+          </div>
+
+          <div className=" flex items-center gap-x-[84px]"> 
+            <div className=" flex gap-x-[50px]">
+              <div onClick={()=> setQuantity((quantity > 0) && --quantity)} className=" h-[56px] w-[56px] cursor-pointer flex items-center justify-center bg-transparent rounded-[50%] hover:bg-[#F4F4F4] ">
+                <HiOutlineMinus className=" w-6 h-6 " />
+              </div>
+              <input type="number" readOnly value={quantity}  className=" w-[80px] outline-hidden border-hidden text-center text-[#303030] font-poppins text-3xl font-semibold leading-[46px]"/>
+              <div onClick={()=> setQuantity(++quantity)} className=" h-[56px] w-[56px] cursor-pointer flex items-center justify-center bg-transparent rounded-[50%] hover:bg-[#F4F4F4] ">
+                <HiOutlinePlus  className=" w-6 h-6" />
+              </div>
+            </div>
+            <div className=" flex items-center gap-x-4"> 
+              <Button content={"Buy Now"} paddingX="40px" paddingY="16px" color="white" radious="10" bg="#FF624C"/>
+              <div className=" h-[62px] w-[62px] flex items-center justify-center rounded-[10px] border border-[#FF624C]">
+                  <CartIcon width={28} height={28}/>
               </div>
             </div>
           </div>
