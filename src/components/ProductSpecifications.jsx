@@ -1,0 +1,122 @@
+import React, { useState } from 'react'
+
+
+    let contentOne = [
+        {
+            Heading: "Brand",
+            paragraph: "NexSUS Tech Company"
+        },
+        {
+            Heading: "Display",
+            paragraph: "17.3-inch Full HD (1920 x 1080) IPS panel, 144Hz refresh rate, 3ms response time, 100% sRGB color gamut, Adaptive-Sync technology, anti-glare"
+        },
+        {
+            Heading: "Processor",
+            paragraph: "10th Gen Intel Core i9-10980HK (8 cores, 16 threads, 2.4GHz base clock speed, up to 5.3GHz turbo boost)"
+        },
+        {
+            Heading: "Graphics",
+            paragraph: "NVIDIA GeForce RTX 3080 (16GB GDDR6 VRAM)"
+        },
+        {
+            Heading: "Memory",
+            paragraph: "32GB DDR4-3200 RAM"
+        },
+        {
+            Heading: "Storage",
+            paragraph: "1TB PCIe NVMe M.2 SSD"
+        }
+        
+    ]
+    let contentTwo = [
+        {
+            Heading: "Audio",
+            paragraph: "2 x 4W speakers with Smart Amp technology"
+        },
+        {
+            Heading: "Connection",
+            paragraph: "Wi-Fi 6 (802.11ax), Bluetooth 5.1, Gigabit Ethernet, HDMI 2.0b, USB 3.2 Gen 2 Type-C with DisplayPort 1.4 and Power Delivery, 3 x USB 3.2 Gen 1 Type-A, 3.5mm audio"
+        },
+        {
+            Heading: "Keyboard",
+            paragraph: "Backlit Chiclet keyboard, N-key rollover, per-key RGB lighting, Aura Sync technology"
+        },
+        {
+            Heading: "Battery",
+            paragraph: "4-cell 90Wh lithium battery (up to 8 hours battery life)"
+        },
+        {
+            Heading: "Dimensions",
+            paragraph: "15.7 x 11.1 x 1.0 inches (W x D x H)"
+        },
+        {
+            Heading: "Weight",
+            paragraph: "6.28 pounds"
+        }
+        
+    ]
+
+
+const ProductSpecifications = () => {
+    let [activeDesc,setDescrip] = useState(true)
+    let [activeSpecific,setSpecific] = useState(false)
+    let [activeReturn,setReturn] = useState(false)
+    let [activeReviews,setReviews] = useState(false)
+
+    let handleDescription = ()=>{
+        setDescrip(true)
+        setSpecific(false)
+        setReturn(false)
+        setReviews(false)
+    }
+    let handleSpecification = ()=>{
+        setDescrip(false)
+        setSpecific(true)
+        setReturn(false)
+        setReviews(false)
+    }
+    let handleReturn = ()=>{
+        setDescrip(false)
+        setSpecific(false)
+        setReturn(true)
+        setReviews(false)
+    }
+    let handleReviews = ()=>{
+        setDescrip(false)
+        setSpecific(false)
+        setReturn(false)
+        setReviews(true)
+    }
+
+  return (
+    <div>
+        <div className=' gap-x-12 flex font-poppins text-[#303030] text-2xl font-semibold leading-7.5'>
+            <div onClick={handleDescription} className={`${activeDesc && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Description</div>
+            <div onClick={handleSpecification} className={`${activeSpecific && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Specification</div>
+            <div onClick={handleReturn} className={`${activeReturn && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Return</div>
+            <div onClick={handleReviews} className={`${activeReviews && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Reviews</div>
+        </div>
+
+        {activeSpecific
+          && 
+
+          <div className=' flex gap-x-6 mt-12'>
+            <div className='w-[50%] [&>div]:pb-8'>
+                {contentOne.map((item,index)=>{
+                  return <div key={index} className=' flex'>
+                            <div className=' font-poppins text-[#303030] text-xl font-semibold leading-7.5'> {item.Heading} </div>
+                            <div className=' font-montserrat text-[#303030] text-xl font-normal leading-7.5 opacity-75'> {item.paragraph} </div>
+                        </div>
+                })
+
+                }
+            </div>
+            <div className='w-[50%]'></div>
+          </div>
+
+        }
+    </div>
+  )
+}
+
+export default ProductSpecifications
