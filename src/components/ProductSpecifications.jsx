@@ -58,8 +58,8 @@ import React, { useState } from 'react'
 
 
 const ProductSpecifications = () => {
-    let [activeDesc,setDescrip] = useState(true)
-    let [activeSpecific,setSpecific] = useState(false)
+    let [activeDesc,setDescrip] = useState(false)
+    let [activeSpecific,setSpecific] = useState(true)
     let [activeReturn,setReturn] = useState(false)
     let [activeReviews,setReviews] = useState(false)
 
@@ -97,24 +97,56 @@ const ProductSpecifications = () => {
             <div onClick={handleReviews} className={`${activeReviews && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Reviews</div>
         </div>
 
+        {activeDesc
+          &&   
+         <div className='mt-12 text-center font-poppins text-[#303030] text-xl font-semibold leading-7.5'> Currently there is no Description</div>
+        }
+
         {activeSpecific
           && 
 
           <div className=' flex gap-x-6 mt-12'>
-            <div className='w-[50%] [&>div]:pb-8'>
+            <div className='w-[50%]'>
                 {contentOne.map((item,index)=>{
-                  return <div key={index} className=' flex'>
-                            <div className=' font-poppins text-[#303030] text-xl font-semibold leading-7.5'> {item.Heading} </div>
-                            <div className=' font-montserrat text-[#303030] text-xl font-normal leading-7.5 opacity-75'> {item.paragraph} </div>
+                  return <div key={index} className=' flex [&>div]:mb-8'>
+                            <div>
+                               <div className=' w-[185px] font-poppins text-[#303030] text-xl font-semibold leading-7.5'> {item.Heading} </div>
+                            </div>
+                            <div className=' max-w-[560px]'>
+                                <div className='  px-3 font-montserrat text-[#303030] text-xl font-normal leading-7.5 opacity-75'> {item.paragraph} </div>
+                            </div>
                         </div>
                 })
-
                 }
             </div>
-            <div className='w-[50%]'></div>
+            <div className='w-[50%]'>
+                {contentTwo.map((item,index)=>{
+                  return <div key={index} className=' flex [&>div]:mb-8'>
+                            <div>
+                               <div className=' w-[185px] font-poppins text-[#303030] text-xl font-semibold leading-7.5'> {item.Heading} </div>
+                            </div>
+                            <div className=' max-w-[560px]'>
+                                <div className=' font-montserrat text-[#303030] text-xl font-normal leading-7.5 opacity-75'> {item.paragraph} </div>
+                            </div>
+                        </div>
+                })
+                }
+            </div>
           </div>
-
         }
+
+        {activeReturn
+          &&   
+         <div className='mt-12 text-center font-poppins text-[#303030] text-xl font-semibold leading-7.5'> Currently there is no return information</div>
+        }
+
+        {activeReviews
+          &&   
+         <div className='mt-12 text-center font-poppins text-[#303030] text-xl font-semibold leading-7.5'> Currently there is no Reviews</div>
+        }
+
+         
+         <hr  className=' border-[#303030] opacity-25 mt-12'/>
     </div>
   )
 }

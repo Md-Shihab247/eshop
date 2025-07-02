@@ -15,7 +15,7 @@ const HomePage = () => {
       <Facility/>
       <FeaturedProduct/>
       <OfferSection/>
-      <NewProduct/>
+      <NewProduct heading={"New Products"} isProductDetailPage={false}/>
       <SpringSale/>
       <BestSeller/>
       <Faq/>

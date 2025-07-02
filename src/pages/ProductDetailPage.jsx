@@ -27,7 +27,7 @@ function ProductDetailPage() {
         <NexsusRock/>
         <ProductDetailsServices/>
         <ProductSpecifications/>
-        <NewProduct/>
+        <NewProduct heading={"Related Products"} isProductDetailPage={true}/>
         
       </Container>
     </div>

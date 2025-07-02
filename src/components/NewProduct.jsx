@@ -3,8 +3,10 @@ import ProductLayout from "./layouts/ProductLayout";
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import Button from "./Button"
+import { Link } from "react-router-dom";
+import ArrowRight from "./icons/ArrowRight";
 
-const NewProduct = () => { 
+const NewProduct = ({heading,isProductDetailPage}) => { 
 
       const newProducts = [
         { product: 'All Catagories' },
@@ -38,35 +40,40 @@ const NewProduct = () => {
     }
 
   return (
-    <div className="my-[80px]">
+    <div className={isProductDetailPage ? "my-16" : "my-[80px]"}>
       <Container>
         <div className=" flex justify-between mb-12">
-          <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]">New Products</h3>
-          <div className=" flex items-center gap-x-4">
-            <span className=" text-[#303030] font-montserrat text-base font-normal leading-6">Sort by</span>
-            <div 
-                onClick={()=> {setIsDropDownOpen(!isDropDownOpen) }}
-                ref={dropdownRef}
-                className=" relative flex items-center"> 
-                  {selected 
-                  ?
-                  <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
-                  : 
-                  <div  className=" flex items-center justify-between w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
-                  }
+            <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]"> {heading} </h3>
+            {isProductDetailPage
+             ?
+             <Link to='/' className=" flex gap-x-4 items-center text-[#FF624C] font-montserrat text-base font-bold leading-9">View All <ArrowRight/></Link>
+              :
+              <div className=" flex items-center gap-x-4">
+                <span className=" text-[#303030] font-montserrat text-base font-normal leading-6">Sort by</span>
+                <div 
+                    onClick={()=> {setIsDropDownOpen(!isDropDownOpen) }}
+                    ref={dropdownRef}
+                    className=" relative flex items-center"> 
+                      {selected 
+                      ?
+                      <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
+                      : 
+                      <div  className=" flex items-center justify-between w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
+                      }
 
-                {isDropDownOpen && (
-                    <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
-                      {newProducts.map((item,index)=>{
+                    {isDropDownOpen && (
+                        <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
+                          {newProducts.map((item,index)=>{
 
-                      return <li onClick={()=> handleSelect(item.product)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.product} </li>
+                          return <li onClick={()=> handleSelect(item.product)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.product} </li>
 
-                      })}
-                    </ul>
-                      
-                  )}
-              </div>
-          </div>
+                          })}
+                        </ul>
+                          
+                      )}
+                  </div>
+              </div>  
+            }
         </div>
           <div className=" flex gap-x-6">
             <div className=" max-w-[285px]">
@@ -85,9 +92,14 @@ const NewProduct = () => {
                 <ProductLayout catagory={"CAMERA"} tittle={"CamPro HERO10 Black Sleek Design 2023 4K ..."} price={"$1,499.99"} rating={2} bordering={true} discount={false} stack={false} starckAmount={"50"} />
             </div>
           </div>
-          <div className=" mt-16 flex justify-center">
+          {isProductDetailPage
+           ?
+            null
+           :
+           <div className=" mt-16 flex justify-center">
               <Button content={"Load More"} bg="transparent" color="#FF624C" border="1px solid #FF624C" />
-          </div>
+           </div>
+          }
       </Container>
     </div>
   );
