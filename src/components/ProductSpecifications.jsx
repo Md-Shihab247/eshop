@@ -55,56 +55,25 @@ import React, { useState } from 'react'
         }
         
     ]
-
-
 const ProductSpecifications = () => {
-    let [activeDesc,setDescrip] = useState(false)
-    let [activeSpecific,setSpecific] = useState(true)
-    let [activeReturn,setReturn] = useState(false)
-    let [activeReviews,setReviews] = useState(false)
-
-    let handleDescription = ()=>{
-        setDescrip(true)
-        setSpecific(false)
-        setReturn(false)
-        setReviews(false)
-    }
-    let handleSpecification = ()=>{
-        setDescrip(false)
-        setSpecific(true)
-        setReturn(false)
-        setReviews(false)
-    }
-    let handleReturn = ()=>{
-        setDescrip(false)
-        setSpecific(false)
-        setReturn(true)
-        setReviews(false)
-    }
-    let handleReviews = ()=>{
-        setDescrip(false)
-        setSpecific(false)
-        setReturn(false)
-        setReviews(true)
-    }
+    let [active,setActive] = useState("specific")
 
   return (
     <div>
         <div className=' gap-x-12 flex font-poppins text-[#303030] text-2xl font-semibold leading-7.5'>
-            <div onClick={handleDescription} className={`${activeDesc && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Description</div>
-            <div onClick={handleSpecification} className={`${activeSpecific && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Specification</div>
-            <div onClick={handleReturn} className={`${activeReturn && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Return</div>
-            <div onClick={handleReviews} className={`${activeReviews && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Reviews</div>
+            <div onClick={()=> setActive("description")} className={`${active == "description" && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Description</div>
+            <div onClick={()=> setActive("specific")} className={`${active == "specific" && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Specification</div>
+            <div onClick={()=> setActive("return")} className={`${active == "return" && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Return</div>
+            <div onClick={()=> setActive("reviews")} className={`${active == "reviews" && "opacity-100 relative before:absolute before:h-1 before:w-full before:bg-[#FF624C] before:bottom-[-8px] before:left-0"} opacity-25  cursor-pointer`}>Reviews</div>
         </div>
 
-        {activeDesc
+        {active == "description"
           &&   
          <div className='mt-12 text-center font-poppins text-[#303030] text-xl font-semibold leading-7.5'> Currently there is no Description</div>
         }
 
-        {activeSpecific
+        {active == "specific"
           && 
-
           <div className=' flex gap-x-6 mt-12'>
             <div className='w-[50%]'>
                 {contentOne.map((item,index)=>{
@@ -135,17 +104,16 @@ const ProductSpecifications = () => {
           </div>
         }
 
-        {activeReturn
+        {active == "return"
           &&   
          <div className='mt-12 text-center font-poppins text-[#303030] text-xl font-semibold leading-7.5'> Currently there is no return information</div>
         }
 
-        {activeReviews
+        {active == "reviews"
           &&   
          <div className='mt-12 text-center font-poppins text-[#303030] text-xl font-semibold leading-7.5'> Currently there is no Reviews</div>
         }
 
-         
          <hr  className=' border-[#303030] opacity-25 mt-12'/>
     </div>
   )
