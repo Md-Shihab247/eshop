@@ -36,10 +36,10 @@ const OrderSummary = () => {
     <div className=' w-[40%] bg-[#F4F4F4] rounded-[25px] p-10 box-border'>
         <h5 className=' text-[#303030] font-poppins text-2xl font-semibold leading-6'>Order Summary</h5>
 
-        <div>
+        <div className='mt-7'>
             {Summary.map((item,index)=>{
 
-         return <div key={index} className=' flex mt-7 py-5 box-border border-b border-[#C3C3C3] text-[#303030] text-xl font-montserrat font-normal leading-7.5'>
+         return <div key={index} className=' flex py-5 box-border border-b border-[#C3C3C3] text-[#303030] text-xl font-montserrat font-normal leading-7.5'>
                     <p className=' w-[250px]'> {item.tittle} </p>
                     <span className=' font-bold px-[63px]'> {item.quantity} </span>
                     <div className=' font-poppins font-semibold'> {item.price} </div>

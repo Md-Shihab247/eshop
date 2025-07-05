@@ -6,6 +6,7 @@ import CheakoutPage from "./pages/CheakoutPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import CommonLayouts from "./components/layouts/CommonLayouts";
+import CartPage from "./pages/CartPage";
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/product-list" element={<ProductListPage />} />
           <Route path="/product-detail" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheakoutPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
