@@ -20,7 +20,7 @@ const NexsusRight = () => {
                 Pro
               </p>
               <hr className="border-[#303030] opacity-25 w-[630px]" />
-              <div className=" flex items-start gap-x-[18px]">
+              <div className=" flex items-start gap-x-[18px] mt-6">
                 <big className=" font-poppins text-[56px] text-[#FF624C] font-bold leading-[68px]">
                   $2,999.99
                 </big>

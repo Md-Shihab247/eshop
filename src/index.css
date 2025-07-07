@@ -68,6 +68,10 @@ label .active{
   font-weight: 700;
 }
 
+.nexsus-rock .slick-current{
+  padding: 0;
+}
+
 
 
 

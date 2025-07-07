@@ -32,8 +32,8 @@ const ProductListPage = () => {
    let [isDropDownOpen3, setIsDropDownOpen3] = useState(true);
    const [isChecked, setIsChecked] = useState([]);
    const [isChecked2, setIsChecked2] = useState([]);
-   let [minValue,setMinValue] = useState(0)
-   let [maxValue,setMaxValue] = useState(1000)
+   let [minValue,setMinValue] = useState(1000)
+   let [maxValue,setMaxValue] = useState(4000)
 
     let handleCheck1 = (index)=>{
         setIsChecked((prev)=> prev.includes(index) ? prev.filter((value)=> value !== index) : [...prev, index]) 
@@ -47,7 +47,7 @@ const ProductListPage = () => {
     let updateSlider = (type,value)=>{ 
         let newValue = parseInt(value)
         if (isNaN(newValue)) return
-        if( newValue < 0 || newValue > 1000) {
+        if( newValue < 0 || newValue > 5000) {
             toast.error('Minimum & Maximum price must be between 0 and 1000 !', {
             position: "bottom-center",
             autoClose: 5000,
@@ -70,8 +70,8 @@ const ProductListPage = () => {
     }
 
 
-  let minParcet = (minValue / 1000) * 100 
-  let maxParcet = (maxValue / 1000) * 100 
+  let minParcet = (minValue / 5000) * 100 
+  let maxParcet = (maxValue / 5000) * 100 
 
   return (
     <div className='mt-16'>
@@ -137,22 +137,28 @@ const ProductListPage = () => {
                 {isDropDownOpen3 && 
                 <div>
                   <div className=' flex gap-x-[11px]'>
-                    <input 
+                    <div  className=' relative font-montserrat text-base font-normal leading-6 text-[#303030]'>
+                      <span className=' absolute top-1/2 -translate-y-[50%] left-[28px]'>$</span>
+                      <input 
                        onChange={(e)=> updateSlider("min",e.target.value)}
-                       className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' 
+                       className='h-[74px] w-[124px] px-5 text-center border border-[#929292] rounded-[10px] bg-[#F4F4F4]' 
                        type="number"
                        value={minValue}
-                       step={10}
-                       max={1000}
+                       step={50}
+                       max={5000}
                        min={0}/>
-                    <input 
+                    </div>
+                    <div  className=' relative font-montserrat text-base font-normal leading-6 text-[#303030]'>
+                      <span className=' absolute top-1/2 -translate-y-[50%] left-[28px]'>$</span>
+                      <input 
                       onChange={(e)=> updateSlider("max",e.target.value)}
-                       className='h-[74px] w-[124px] px-5 text-center font-montserrat text-base font-normal leading-6 text-[#303030] border border-[#929292] rounded-[10px] bg-[#F4F4F4]' 
+                       className='h-[74px] w-[124px] px-5 text-center border border-[#929292] rounded-[10px] bg-[#F4F4F4]' 
                       type="number"
                       value={maxValue}
-                      step={10}
-                      max={1000}
+                      step={50}
+                      max={5000}
                       min={0} />
+                    </div>
                   </div>
 
                   <div className=' mt-7.5'>
@@ -165,8 +171,8 @@ const ProductListPage = () => {
                        <input 
                        type="range"
                        min={0}
-                       max={1000}
-                       step={10}
+                       max={5000}
+                       step={50}
                        value={minValue}
                        onChange={(e)=> updateSlider("min",e.target.value)}
                        className='w-full h-2 bg-transparent pointer-events-none  absolute top-[-2px] appearance-none'
@@ -175,8 +181,8 @@ const ProductListPage = () => {
                        <input 
                        type="range"
                        min={0}
-                       max={1000}
-                       step={10}
+                       max={5000}
+                       step={50}
                        value={maxValue}
                        onChange={(e)=> updateSlider("max",e.target.value)}
                        className='w-full h-2 bg-transparent pointer-events-none absolute top-[-2px] appearance-none'

@@ -3,20 +3,36 @@ import FullScreenIcon from "../components/icons/FullScreenIcon";
 import Slider from "react-slick";
 import { MdClose } from "react-icons/md";
 
+
+    let sliderArry = [
+      {src : "./images/panjabi.webp"},
+      {src : "./images/keyboard.webp"},
+      {src : "./images/headphone.webp"}
+    ]
+
+
 const NexsusLeft = () => {
 
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
     const sliderRef1 = useRef(null);
     const sliderRef2 = useRef(null);
-    const [active, setAvtive] = useState(false);
-  
+    const [activeModal, setModal] = useState(false);
+    let [imgSrc, setImgSrc] = useState(sliderArry[0].src);
+
      var settings = {
+    className: "center",
+    centerMode: true,
+    centerPadding: "0px",
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: (current) =>{
+      
+      setImgSrc(sliderArry[current].src);
+    }
   };
   var settingsAnother = {
     dots: false,
@@ -33,121 +49,64 @@ const NexsusLeft = () => {
   }, []);
 
    let handleClick = () => {
-    setAvtive(true);
-  };
-
-
+     setModal(true);
+    };
 
   return (
     <>
-    <div className=" w-[54%]">
+    <div className=" w-[54%] relative">
+            <FullScreenIcon click={handleClick} className=" absolute top-2 right-6 z-[999] p-3 box-border  rounded-[50%] cursor-pointer " />
+            
             <Slider {...settings} asNavFor={nav2} ref={sliderRef1}>
-              <div>
-                <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
-                  <img src="./images/banner.png" alt="img" />
-                  <FullScreenIcon
-                    click={handleClick}
-                    className=" absolute p-3 box-border rounded-[50%] transition-all hover:bg-[rgba(255,255,255,0.4)] top-2 right-6 cursor-pointer"
-                  />
-                </div>
-              </div>
-              <div>
-                <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
-                  <img src="./images/banner.png" alt="img" />
-                  <FullScreenIcon
-                    click={handleClick}
-                    className=" absolute p-3 box-border rounded-[50%] transition-all hover:bg-[rgba(255,255,255,0.4)] top-2 right-6 cursor-pointer"
-                  />
-                </div>
-              </div>
-              <div>
-                <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
-                  <img src="./images/banner.png" alt="img" />
-                  <FullScreenIcon
-                    click={handleClick}
-                    className=" absolute p-3 box-border rounded-[50%] transition-all hover:bg-[rgba(255,255,255,0.4)] top-2 right-6 cursor-pointer"
-                  />
-                </div>
-              </div>
-              <div>
-                <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
-                  <img src="./images/banner.png" alt="img" />
-                  <FullScreenIcon
-                    click={handleClick}
-                    className=" absolute p-3 box-border rounded-[50%] transition-all hover:bg-[rgba(255,255,255,0.4)] top-2 right-6 cursor-pointer"
-                  />
-                </div>
-              </div>
-              <div>
-                <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
-                  <img src="./images/banner.png" alt="img" />
-                  <FullScreenIcon
-                    click={handleClick}
-                    className=" absolute p-3 box-border rounded-[50%] transition-all hover:bg-[rgba(255,255,255,0.4)] top-2 right-6 cursor-pointer"
-                  />
-                </div>
-              </div>
-              <div>
-                <div className=" relative w-full h-auto bg-violet-600 overflow-hidden rounded-[25px]">
-                  <img src="./images/banner.png" alt="img" />
-                  <FullScreenIcon
-                    click={handleClick}
-                    className=" absolute p-3 box-border rounded-[50%] transition-all hover:bg-[rgba(255,255,255,0.4)] top-2 right-6 cursor-pointer"
-                  />
-                </div>
-              </div>
+              {sliderArry.map((item,index)=>{
+                return  <div key={index} >
+                    <div className=" w-full flex items-center justify-center bg-white overflow-hidden rounded-[25px]">
+                      <img  src={item.src} alt="img" className='h-[540px] object-cover'/>
+                    </div>
+                  </div>
+              })
+              }
             </Slider>
 
-            <Slider
+            <div className=' w-[330px] mt-8'>
+              <Slider
               {...settingsAnother}
               asNavFor={nav1}
               ref={sliderRef2}
-              slidesToShow={5}
+              slidesToShow={3}
               swipeToSlide={true}
               focusOnSelect={true}
+              className=' nexsus-rock'
             >
               <div>
-                <div className="mx-[2.5px] rounded-[10px] overflow-hidden cursor-pointer">
-                  <img src="./images/banner.png" alt="img" />
+                <div className=" flex justify-center items-center cursor-pointer">
+                  <img src="./images/panjabi.webp" alt="img" className=' h-[82px] w-[94px] object-cover box-border border border-[#AFAFAF] rounded-[10px]'/>
                 </div>
               </div>
               <div>
-                <div className="mx-[2.5px] rounded-[10px] overflow-hidden cursor-pointer">
-                  <img src="./images/banner.png" alt="img" />
+                <div className=" flex justify-center items-center cursor-pointer">
+                  <img src="./images/keyboard.webp" alt="img" className='  h-[82px] w-[94px] object-cover box-border border border-[#AFAFAF] rounded-[10px]'/>
                 </div>
               </div>
               <div>
-                <div className="mx-[2.5px] rounded-[10px] overflow-hidden cursor-pointer">
-                  <img src="./images/banner.png" alt="img" />
-                </div>
-              </div>
-              <div>
-                <div className="mx-[2.5px] rounded-[10px] overflow-hidden cursor-pointer">
-                  <img src="./images/banner.png" alt="img" />
-                </div>
-              </div>
-              <div>
-                <div className="mx-[2.5px] rounded-[10px] overflow-hidden cursor-pointer">
-                  <img src="./images/banner.png" alt="img" />
-                </div>
-              </div>
-              <div>
-                <div className="mx-[2.5px] rounded-[10px] overflow-hidden cursor-pointer">
-                  <img src="./images/banner.png" alt="img" />
+                <div className=" flex justify-center items-center cursor-pointer">
+                  <img src="./images/headphone.webp" alt="img" className=' h-[82px] w-[94px] object-cover box-border border border-[#AFAFAF] rounded-[10px]'/>
                 </div>
               </div>
             </Slider>
+            </div>
           </div>
 
-          {active && (
+          {activeModal && 
+
           <div className="w-[100%] absolute top-0 left-0 z-[999] h-screen flex items-center justify-center bg-[rgba(0,0,0,0.5)]">
-            <img src="./images/banner.png" alt="" />
+            <img src={imgSrc} alt="img" className=' object-contain w-200 h-[700px]'/>
             <MdClose
-              onClick={() => setAvtive(false)}
-              className=" relative text-3xl top-[-265px] right-[52px] h-9 w-9 flex items-center justify-center p-1 box-border rounded-[50%] transition-all bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.5)] cursor-pointer"
+              onClick={() => setModal(false)}
+              className=" relative text-4xl top-[-40%] right-[-25%] h-9 w-9 flex items-center justify-center p-1 box-border rounded-[50%] bg-white cursor-pointer transition-all hover:bg-[rgba(255,255,255,0.5)]"
             />
           </div>
-        )}
+        }
      </>
   )
 }
