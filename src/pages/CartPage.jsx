@@ -28,7 +28,7 @@ const CartPage = () => {
             </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent group hover:border-[#CBCBCB]'>
+        <div className=' my-6 overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent group hover:border-[#CBCBCB]'>
             <div className='  flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
@@ -57,7 +57,7 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' mb-6 overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
@@ -85,7 +85,7 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' mb-6 overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
@@ -113,7 +113,7 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' mb-6 overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
@@ -141,7 +141,7 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' mb-6 overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
