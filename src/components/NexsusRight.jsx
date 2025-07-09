@@ -44,7 +44,7 @@ const NexsusRight = () => {
                     <li>Worldwide</li>
                 <div className=" flex gap-x-1 flex-wrap">
                     <Button isOpacity={true} content={"Off White"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#303030" size="16px"/>
-                    <Button isOpacity={true} content={"Space Gray"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#FF624C" size="16px"/>
+                    <Button isOpacity={true} content={"Space Gray"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#303030" size="16px"/>
                     <Button isOpacity={true} content={"Jet Black"} fontName="Montserrat" weight="700" lineHeight="24px" bg="white" paddingX="32px" paddingY="16px" color="#303030" size="16px"/>
                     <button className="text-[#303030] mt-2 font-montserrat font-bold text-base leading-6 opacity-25 px-8 py-4 border border-[#303030] rounded-[5px] bg-white cursor-pointer">Cinnamon Red</button>
                 </div>

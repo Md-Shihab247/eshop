@@ -72,6 +72,13 @@ label .active{
   padding: 0;
 }
 
+.scroll-thumb::-webkit-scrollbar{
+  width: 5px;
+}
+.scroll-thumb::-webkit-scrollbar-thumb{
+  background: #FF624C;
+}
+
 
 
 

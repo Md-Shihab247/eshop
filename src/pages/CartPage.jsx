@@ -5,6 +5,7 @@ import DeleteIcon from '../components/icons/DeleteIcon'
 import ShareIcon2 from '../components/icons/ShareIcon2'
 import ShareIcon from '../components/icons/ShareIcon'
 import Facility from '../components/Facility'
+import Button from '../components/Button'
 
 const CartPage = () => {
   return (
@@ -27,13 +28,13 @@ const CartPage = () => {
             </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border transition-all rounded-[10px] border-transparent group hover:border-[#CBCBCB]'>
+        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent group hover:border-[#CBCBCB]'>
             <div className='  flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
                     <div className=' w-[314px]'>
                         <span className='text-[#303030] font-montserrat text-sm font-normal leading-5 tracking-[5px]'>LAPTOP</span>
-                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 '>2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD</p>
+                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5  duration-300 group-hover:text-[#FF624C]'>2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD</p>
                         <div className=' text-[#303030] font-montserrat text-base font-normal leading-6'>
                             <span className=' font-bold'>Variant:</span>
                             <span className='ml-2'>Space Gray</span>
@@ -56,13 +57,13 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border transition-all rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
                     <div className=' w-[314px]'>
                         <span className='text-[#303030] font-montserrat text-sm font-normal leading-5 tracking-[5px]'>WATCH</span>
-                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 '>Mobile Watch A Series GPS 7/144 45 mm Red Rubber Band</p>
+                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 duration-300 group-hover:text-[#FF624C]'>Mobile Watch A Series GPS 7/144 45 mm Red Rubber Band</p>
                         <div className=' text-[#303030] font-montserrat text-base font-normal leading-6'>
                             <span className=' font-bold'>Variant:</span>
                             <span className='ml-2'>Fiery Red</span>
@@ -84,13 +85,13 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border transition-all rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
                     <div className=' w-[314px]'>
                         <span className='text-[#303030] font-montserrat text-sm font-normal leading-5 tracking-[5px]'>TELEVISION</span>
-                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 '>LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color USB HQ</p>
+                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 duration-300 group-hover:text-[#FF624C]'>LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color USB HQ</p>
                         <div className=' text-[#303030] font-montserrat text-base font-normal leading-6'>
                             <span className=' font-bold'>Variant:</span>
                             <span className='ml-2'>Jet Black</span>
@@ -112,13 +113,13 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border transition-all rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
                     <div className=' w-[314px]'>
                         <span className='text-[#303030] font-montserrat text-sm font-normal leading-5 tracking-[5px]'>GAMING</span>
-                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 '>Console Game Stick HD Wireless Bluetooth Connect</p>
+                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 duration-300 group-hover:text-[#FF624C]'>Console Game Stick HD Wireless Bluetooth Connect</p>
                         <div className=' text-[#303030] font-montserrat text-base font-normal leading-6'>
                             <span className=' font-bold'>Variant:</span>
                             <span className='ml-2'>White</span>
@@ -140,13 +141,13 @@ const CartPage = () => {
                 </div>
         </div>
 
-        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border transition-all rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
+        <div className=' overflow-hidden group relative pt-6 pl-[36px] pb-[56px] pr-12] box-border border duration-300 rounded-[10px] border-transparent hover:border-[#CBCBCB]'>
             <div className='flex items-center gap-x-[62px]'>
                 <img src="./images/cart-img.png" alt="cart" />
                 <div className=' flex items-center'>
                     <div className=' w-[314px]'>
                         <span className='text-[#303030] font-montserrat text-sm font-normal leading-5 tracking-[5px]'>TABLET</span>
-                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 '>Mini Tablet Pro 16 inch HD Pencil 128 GB System RAM 28</p>
+                        <p className='text-[#303030] mt-4 mb-[46px] font-poppins text-xl font-semibold leading-7.5 duration-300 group-hover:text-[#FF624C]'>Mini Tablet Pro 16 inch HD Pencil 128 GB System RAM 28</p>
                         <div className=' text-[#303030] font-montserrat text-base font-normal leading-6'>
                             <span className=' font-bold'>Variant:</span>
                             <span className='ml-2'>Space Gray (with Case)</span>
@@ -168,6 +169,30 @@ const CartPage = () => {
                 </div>
         </div>
 
+        <div className=' flex justify-between items-start'>
+            <div className=' w-[618px] relative'>
+                <input type="number" placeholder='Enter coupon code (ex: FIRSTPAY)' name='coupon' className=' pr-[180px] w-full box-border rounded-[10px] bg-white border border-[#CBCBCB] py-[35px] px-9 text-[#303030] font-montserrat text-base font-normal leading-6 opacity-75 ' />
+                <button className=' cursor-pointer absolute top-1/2 -translate-y-[50%] right-9 text-[#303030] font-poppins text-xl font-semibold leading-7.5 underline'>Apply Code</button>
+            </div>
+
+            <div className=' flex items-end flex-col'>
+              <div className='w-[618px] flex items-center justify-between py-8 px-9 bg-[#F4F4F4] rounded-[10px]'>
+                <div className='text-[#303030] font-montserrat text-base font-bold leading-6'>SUB TOTAL</div>
+                <div className=' flex'>
+                    <span className='text-[#FF624C] font-poppins text-2xl font-semibold leading-7.5 mr-[23px]'>$7,733.00</span>
+                    <small className='text-[#303030] font-montserrat text-sm font-normal leading-5 mt-2'>( excl. shipping fee )</small>
+                </div>
+              </div>
+
+              <div className=' flex items-center mt-8 gap-x-[56px]'>
+                 <div className=' text-[#303030] font-poppins text-xl font-semibold leading-7.5'>Continue Shopping</div>
+                 <Button content={"Update Cart"} paddingX='40px' paddingY='16px' bg='#FF624C' radious='10' color='white' fontName='Montserrat' size='20px' weight='700' lineHeight='30px'/>
+              </div> 
+            </div>
+        </div>
+    </Container>
+     <hr className=' border-[#CBCBCB] mt-[100px]'/>
+    <Container>
         <Facility/>
     </Container>
    </div>

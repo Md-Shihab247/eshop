@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Container from '../components/layouts/Container'
 import { IoIosArrowDown } from 'react-icons/io'
-import CheckIcon from '../components/icons/CheckIcon'
 import PaginationProducts from '../components/PaginationProducts'
 import { Bounce, toast } from 'react-toastify'
 import { GoCheck } from 'react-icons/go'

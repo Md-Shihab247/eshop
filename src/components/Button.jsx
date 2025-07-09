@@ -1,3 +1,4 @@
+
 const Button = ({
   content,
   bg = "#FF624C",
@@ -12,11 +13,13 @@ const Button = ({
   border="none",
   isOpacity
 }) => {
+
+
   return (
     <button
-      className={` relative cursor-pointer ${isOpacity && " before:absolute before:top-0 before:left-0 before:h-full before:w-full before:border before:border-[#303030] before:rounded-[5px] before:opacity-50"}`}
-      style={{
-        background: `${bg}`,
+    className={` relative cursor-pointer transition-all ${isOpacity && " before:absolute before:top-0 before:left-0 before:h-full before:w-full before:border before:border-[#303030] before:rounded-[5px] before:opacity-50"}`}
+    style={{
+      background: `${bg}`,
         color: `${color}`,
         fontSize: `${size}`,
         fontFamily: `${fontName}`,
