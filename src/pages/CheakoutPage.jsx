@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Container from '../components/layouts/Container'
 import BillingDetails from '../components/BillingDetails'
 import OrderSummary from '../components/OrderSummary'
+import { Link } from 'react-router-dom'
 
 const CheakoutPage = () => {
 
@@ -11,11 +12,11 @@ const CheakoutPage = () => {
     <div className=' mt-16'>
       <Container>
         <div className=" flex items-center gap-x-5 text-[#303030] font-montserrat text-base font-normal leading-6">
-          <div>Home</div>
+          <Link to="/">Home</Link>
             <span className=" h-[15px] w-[1px] bg-[#303030]"></span>
-          <div>Cart</div>
+          <Link to="/cart">Cart</Link>
             <span className=" h-[15px] w-[1px] bg-[#303030]"></span>
-          <div className=' font-bold'>Checkout</div>
+          <Link to="/checkout" className=' font-bold'>Checkout</Link>
         </div>
 
         <h1 className=' mt-12 text-center font-poppins text-[56px] font-bold leading-[68px] text-[#303030]'>Checkout</h1>
