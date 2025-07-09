@@ -7,7 +7,7 @@ const InputBox = ({inputType,type,placeholder,textArea,isContact,isStar,value}) 
           if (inputType == "Country" || inputType == "State" || inputType == "City") {
               toast.error(' Select from the Dropdown ', {
               position: "bottom-center",
-              autoClose: 5000,
+              autoClose: 250,
               hideProgressBar: false,
               closeOnClick: false,
               pauseOnHover: true,
