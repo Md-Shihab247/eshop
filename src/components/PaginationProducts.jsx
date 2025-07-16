@@ -31,14 +31,15 @@ const PaginationProducts = () => {
   let dropdownRef2 = useRef(null)
   let itemsParPage = 16;
 
-  let products = Array.from({ length: 160 }, (_, index) => ({
+  let products = Array.from({ length: 200 }, (_, index) => ({
     id: index + 1,
     name: `product ${index + 1}`,
     price: (Math.random() * 1000).toFixed(2),
   }));
 
-  let startIndex = (currentPage - 1) * itemsParPage;
-  let currentProducts = products.slice(startIndex, startIndex + itemsParPage);
+  let startIndex = (currentPage - 1)  * itemsParPage;
+  let endIndex = Math.min(startIndex + itemsParPage, products.length);
+  let currentProducts = products.slice(startIndex, endIndex);
 
 
     useEffect(()=>{
@@ -85,8 +86,7 @@ const PaginationProducts = () => {
             Products
           </h1>
           <p className="mt-6 text-[#303030] font-montserrat text-base font-normal leading-6">
-            Showing {currentProducts[0].id} - {currentProducts[15].id} of{" "}
-            {products.length} results.
+            Showing {startIndex + 1} - {endIndex} of { products.length} results.
           </p>
         </div>
 

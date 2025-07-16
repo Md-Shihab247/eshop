@@ -1,57 +1,57 @@
-
 import PaginationArrowLeftIcon from "../components/icons/PaginationArrowLeftIcon";
 import PaginationArrowRightIcon from "../components/icons/PaginationArrowRightIcon";
 
-const Pagination = ({
-  totalProducts,
-  parPageProducts,
-  currentPage,
-  onPageChange,
-}) => {
+const Pagination = ({ totalProducts, parPageProducts, currentPage, onPageChange}) => {
   let totalPages = Math.ceil(totalProducts / parPageProducts);
-  let maxPageShow = 5;
-  let pages = []
+  let pagesShowBeforeAfter = 3;
+  let pageNumbers = [];
 
-  if ( totalPages <= maxPageShow) {
-       for (let i = 0; i < pages.length; i++) {
-         pages.push(i)
-       }
-  }else{
-
-      let startPages = [1,2,3]
-      let endPages = [totalPages]
-      let middlePage = [currentPage,currentPage + 1].filter((page) => page > 2 && page <= totalPages)
-
-      let uniquePages = Array.from(new Set([...startPages, ...middlePage, ...endPages])).sort((a,b)=> a - b)
-
-       for (let i = 0; i < uniquePages.length; i++) {
-            pages.push(uniquePages[i])
-
-            if (i < uniquePages.length -1 && uniquePages[i + 1] - uniquePages[i] > 1) {
-               if (!pages.includes("...")) {
-                  pages.push("...")
-               }
-             }
-           }
-        }
+  // This is for first page and ... dots
+  if (currentPage > pagesShowBeforeAfter + 1) {
+      pageNumbers.push(1);
+    if (currentPage >= pagesShowBeforeAfter + 2) {
+      pageNumbers.push("...");
+    }
+    if (currentPage < pagesShowBeforeAfter + 2) {
+      pageNumbers = pageNumbers.filter((item) => item !== "..." );
+    }
+  }
+  // Calculation for finding first & last page ........
+  let firstPage = Math.max(1, currentPage - pagesShowBeforeAfter);
+  let lastPage = Math.min(totalPages, currentPage + pagesShowBeforeAfter);
+      for (let i = firstPage; i < lastPage; i++) {
+        pageNumbers.push(i);
+      }
+  // This is for last and ... dots
+  if (currentPage <= totalPages) {
+    if (currentPage < totalPages - pagesShowBeforeAfter - 1) {
+      pageNumbers.push("...");
+    }
+      pageNumbers.push(totalPages);
+  }
 
   return (
     <div className=" flex justify-center my-20">
-      <PaginationArrowLeftIcon
-        currentPage={currentPage}
-        pageChange={onPageChange}
-        isDisabled={currentPage === 1}
-      />
+      <button
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(currentPage - 1)}
+        className=" cursor-pointer"
+      >
+        <PaginationArrowLeftIcon />
+      </button>
 
-      {pages.map((number) => {
+      {pageNumbers.map((number, index) => {
         return (
           <button
             onClick={() => {
               onPageChange(number);
             }}
-            key={number}
+            key={index}
+            disabled={number == "..."}
             className={`${
-              currentPage === number ? "bg-[#FF624C] text-white" : "hover:bg-[#ddd]"
+              currentPage === number
+                ? "bg-[#FF624C] text-white"
+                : number !== "..." && "hover:bg-[#ddd]"
             } mx-2 text-[#303030] font-poppins text-xl font-semibold leading-7.5 cursor-pointer h-10 w-10 flex items-center justify-center rounded-[5px] transition-all`}
           >
             {number}
@@ -59,12 +59,13 @@ const Pagination = ({
         );
       })}
 
-
-      <PaginationArrowRightIcon
-        isDisabled={currentPage === totalPages}
-        pageChange={onPageChange}
-        currentPage={currentPage}
-      />
+      <button
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(currentPage + 1)}
+        className=" cursor-pointer"
+      >
+        <PaginationArrowRightIcon />
+      </button>
     </div>
   );
 };

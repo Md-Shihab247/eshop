@@ -39,7 +39,7 @@ const BottomLayer = () => {
   }, []);
 
   return (
-    <div className=" bg-[#FF624C] py-6">
+    <div className=" hidden sm:block bg-[#FF624C] py-6">
       <Container>
         <div className=" flex justify-between items-center">
           <ul className=" text-white font-bold font-montserrat text-base leading-6 flex gap-x-[80px]">

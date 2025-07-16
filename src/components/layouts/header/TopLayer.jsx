@@ -7,7 +7,7 @@ const TopLayer = () => {
   return (
     <div className=" border-b border-[#CBCBCB]">
         <Container>
-            <div className="flex justify-between items-center py-5 font-montserrat">
+            <div className=" sm:flex sm:justify-between sm:items-center py-5 font-montserrat">
                 <TopLeft/>
                 <TopRight/>
             </div>

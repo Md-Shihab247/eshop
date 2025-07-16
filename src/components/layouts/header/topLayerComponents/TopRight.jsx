@@ -49,7 +49,7 @@ const TopRight = () => {
 
 
   return (
-    <div className=' uppercase flex items-center justify-end relative gap-[50px] text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[65%] before:h-8 before:w-[1px] before:bg-[#CBCBCB] after:absolute after:left-[20%] after:h-8 after:w-[1px] after:bg-[#CBCBCB]'>
+    <div className=' px-2 sm:px-0 uppercase flex items-center justify-end relative gap-x-[40px]  sm:gap-x-[50px] text-[#303030] text-sm font-normal leading-5 before:absolute before:left-[66%] sm:before:left-[65%] before:h-5 sm:before:h-8 before:w-[1px] before:bg-[#CBCBCB] after:absolute after:left-[24%]  sm:after:left-[20%] after:h-5 sm:after:h-8 after:w-[1px] after:bg-[#CBCBCB]'>
       <div>
         <select name="currency" className=' outline-hidden w-[62px]' >
           <option value="USD">USD</option>
