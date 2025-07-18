@@ -128,7 +128,7 @@ const BottomLayer = () => {
             <li> Products </li>
             <li> Blog </li>
             <li> Contact </li>
-            <li> LIMITED SALE </li>
+            <li> Limited Sale </li>
             <li> Best Seller </li>
             <li> New Arrival </li>
           </ul>
