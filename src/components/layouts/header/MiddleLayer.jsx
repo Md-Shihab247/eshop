@@ -36,7 +36,7 @@ const MiddleLayer = () => {
         </div>
 
         <div className="relative flex justify-end items-center ">
-          <div className={`${showSearch ? 'flex': 'hidden'} relative items-center max-w-[95.5vw] `}>
+          <div className={`${showSearch ? 'flex': 'hidden sm:flex'} relative items-center max-w-[95.5vw] `}>
             <input type="text"  placeholder={t("Search_Products")} className=" w-screen  sm:w-[332px] h-14 pl-6 pr-12 py-[18px] bg-white border border-[#979797] opacity-75 rounded-[10px] text-[#303030] font-montserrat text-sm font-normal leading-5"/>
             <span className=" absolute right-[24px] cursor-pointer">
               <SearchIcon/>

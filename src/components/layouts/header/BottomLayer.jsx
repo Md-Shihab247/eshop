@@ -121,7 +121,7 @@ const BottomLayer = () => {
     </div>
 
 
-        <div className="">
+        <div className=" block sm:hidden">
             <ul className={`${activeSidebar ? 'left-0' : 'left-[-100%]'} duration-300 fixed top-0  bg-[#ffffff] border border-[#CBCBCB] pt-8 w-screen h-screen z-50 rounded-[5px] overflow-hidden  font-montserrat font-semibold  box-border shadow-xl text-base text-[#303030] [&>li]:cursor-pointer [&>li]:border-b [&>li]:border-[#CBCBCB] [&>li]:last:border-hidden [&>li]:px-4 [&>li]:py-4 [&>li]:hover:bg-[#DFE3E7]`}>
             <IoMdClose onClick={()=> dispatch(toggleSidebar(false))} className=" absolute text-[25px] top-[6px] right-5 cursor-pointer"/>
             <li> All Categories </li>
