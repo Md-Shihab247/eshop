@@ -4,12 +4,17 @@ import { FaBars } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import { IoMdClose } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSidebar }  from "../../../store/slices/SidebarSlice";
 const BottomLayer = () => {
   let [isDropDownOpen1, setIsDropDownOpen1] = useState(false);
   let [isDropDownOpen2, setIsDropDownOpen2] = useState(false);
   let dropDownOneRef = useRef(null);
   let dropDownTwoRef = useRef(null);
   let {t} = useTranslation();
+  let activeSidebar = useSelector((state)=> state.handleSidebar.active)
+  let dispatch = useDispatch()
   // All Categories Dropdown here 
   useEffect(() => {
     let handleDropDown1 = (event) => {
@@ -19,27 +24,25 @@ const BottomLayer = () => {
     };
 
     document.addEventListener('click', handleDropDown1);
-    return () => {
-      document.removeEventListener('click', handleDropDown1);
-    };
-  }, []);
-
-  // Products Dropdown here 
-  useEffect(() => {
-
+    
+    // Products Dropdown here 
     let handleDropDown2 = (event)=>{
       if ( dropDownTwoRef.current && !dropDownTwoRef.current.contains(event.target)) {
         setIsDropDownOpen2(false);
       }
     }
     document.addEventListener("mousedown", handleDropDown2)
-    return ()=>{
-       document.removeEventListener('mousedown',handleDropDown2)
-      }
+    return () => {
+      document.removeEventListener('click', handleDropDown1)
+      document.removeEventListener('mousedown',handleDropDown2)
+    }
+
   }, []);
 
+
   return (
-    <div className=" hidden sm:block bg-[#FF624C] py-6">
+    <>
+      <div className=" hidden sm:block bg-[#FF624C] py-6">
       <Container>
         <div className=" flex justify-between items-center">
           <ul className=" text-white font-bold font-montserrat text-base leading-6 flex gap-x-[80px]">
@@ -116,6 +119,22 @@ const BottomLayer = () => {
         </div>
       </Container>
     </div>
+
+
+        <div className="">
+            <ul className={`${activeSidebar ? 'left-0' : 'left-[-100%]'} duration-300 fixed top-0  bg-[#ffffff] border border-[#CBCBCB] pt-8 w-full h-screen z-50 rounded-[5px] overflow-hidden  font-montserrat font-semibold  box-border shadow-xl text-base text-[#303030] [&>li]:cursor-pointer [&>li]:border-b [&>li]:border-[#CBCBCB] [&>li]:last:border-hidden [&>li]:px-4 [&>li]:py-4 [&>li]:hover:bg-[#DFE3E7]`}>
+            <IoMdClose onClick={()=> dispatch(toggleSidebar(false))} className=" absolute text-[25px] top-[6px] right-5 cursor-pointer"/>
+            <li> All Categories </li>
+            <li> Products </li>
+            <li> Blog </li>
+            <li> Contact </li>
+            <li> LIMITED SALE </li>
+            <li> Best Seller </li>
+            <li> New Arrival </li>
+          </ul>
+        </div>
+      
+    </>
   );
 };
 

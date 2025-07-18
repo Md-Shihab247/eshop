@@ -1,4 +1,3 @@
-import { IoSearchOutline } from "react-icons/io5"
 import Container from "../Container"
 import CartIcon from "../../icons/CartIcon"
 import UserIcon from "../../icons/UserIcon"
@@ -6,14 +5,16 @@ import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import SearchIcon from "../../icons/SearchIcon"
 import { useEffect, useRef, useState } from "react"
-import { FaBars } from "react-icons/fa"
 import { HiBars3 } from "react-icons/hi2"
+import { useDispatch } from "react-redux"
+import  { toggleSidebar }  from "../../../store/slices/SidebarSlice"
 const MiddleLayer = () => {
 
   let { t } = useTranslation();
   let [showSearch,setShowSearch] = useState(false)
-  let ForInputRef = useRef()
-
+  let ForInputRef = useRef(null)
+  let dispatch = useDispatch()
+  
 
   useEffect(()=>{
 
@@ -45,7 +46,7 @@ const MiddleLayer = () => {
           <span onClick={()=> setShowSearch(!showSearch)} className={` ${showSearch && "hidden"} sm:hidden absolute left-[10px] cursor-pointer`}>
             <SearchIcon width="22" height="22"/>
           </span>
-          <HiBars3 className=" absolute sm:hidden left-[-30px] h-[25px] w-[25px] cursor-pointer"/>
+          <HiBars3 onClick={()=> dispatch(toggleSidebar(true))} className=" absolute sm:hidden left-[-30px] h-[25px] w-[25px] cursor-pointer"/>
 
           <div className=" flex items-center justify-center gap-x-6 mr-[18px] sm:mr-[80px] ml-12">
             <span className={` ${showSearch && 'hidden'}`}>
@@ -70,8 +71,6 @@ const MiddleLayer = () => {
         </div>
       </div>
     </Container>
-
-    
     </>
   )
 }
