@@ -8,9 +8,9 @@ const ProductLayout = ({springDisAmount ,springHover ,springDiscount,limited,pad
     let [ratings,setRatings] = useState(new Array(rating).fill(rating))
 
   return (
-    <div className={`${padding && `p-10`} flex flex-col bg-white rounded-[10px] duration-300 group border border-transparent ${bordering && `hover:border hover:border-[#CBCBCB]`} ${springHover && `hover:bg-[#EAEAEA]`}`}>
-        <div className={`${padding ? `px-0 pt-0` : `px-6 pt-6`} relative`}>
-            <img src={src} alt="product img" />
+    <div className={`${padding && `p-10`} flex flex-col bg-white rounded-[10px] duration-300 group border border-[#CBCBCB] sm:border-transparent ${bordering && `hover:border hover:border-[#CBCBCB]`} ${springHover && `hover:bg-[#EAEAEA]`}`}>
+        <div className={`${padding ? `px-0 pt-0` : `px-6 pt-6`} flex justify-center relative`}>
+            <img src={src} alt="product img" className=' bg-center bg-contain'/>
             {discount &&
               <div className=' absolute top-4 right-4 font-bold font-montserrat text-base leading-6 py-[7px] px-5 rounded-[5px] bg-[#FF624C] text-white'>50%</div>
             }

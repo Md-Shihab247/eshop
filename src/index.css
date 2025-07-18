@@ -16,12 +16,7 @@ body{
   overflow: hidden;
 }
 
- .slick-current .active{
-  outline: 1px solid #CBCBCB;
-  outline-offset: -3px;
-  margin-left: 0.5px;
-  border-radius: 10px;
-}
+
 
 .spring_sale.slick-slider .slick-track {
   @apply flex gap-6;

@@ -40,10 +40,10 @@ const NewProduct = ({heading,isProductDetailPage}) => {
     }
 
   return (
-    <div className={isProductDetailPage ? "my-16" : "my-[80px]"}>
+    <div className={isProductDetailPage ? "my-16" : "my-6 sm:my-[80px] px-2 sm:px-0"}>
       <Container>
-        <div className=" flex justify-between mb-12">
-            <h3 className=" font-poppins font-semibold text-[#303030] text-4xl leading-[46px]"> {heading} </h3>
+        <div className=" sm:flex sm:justify-between mb-12">
+            <h3 className=" font-poppins font-semibold text-[#303030] text-3xl sm:text-4xl leading-[46px] mb-3 sm:mb-0"> {heading} </h3>
             {isProductDetailPage
              ?
              <Link to='/' className=" flex gap-x-4 items-center text-[#FF624C] font-montserrat text-base font-bold leading-9">View All <ArrowRight/></Link>
@@ -56,13 +56,13 @@ const NewProduct = ({heading,isProductDetailPage}) => {
                     className=" relative flex items-center"> 
                       {selected 
                       ?
-                      <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
+                      <div  className=" flex items-center justify-between cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6 w-[180px] sm:w-[235px]"> <span className=""> {selected} </span> <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`} transition-all text-black h-4 w-4 `}/> </div>
                       : 
-                      <div  className=" flex items-center justify-between w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
+                      <div  className=" flex items-center justify-between w-[180px] sm:w-[235px] cursor-pointer text-[#FF624C] font-montserrat text-base font-bold leading-6"> All Catagories <IoIosArrowDown  className={`${isDropDownOpen && `rotate-180`}  transition-all text-black h-4 w-4`}/></div>
                       }
 
                     {isDropDownOpen && (
-                        <ul className="bg-[#fff] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
+                        <ul className="bg-[#fff] border border-[#CBCBCB] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
                           {newProducts.map((item,index)=>{
 
                           return <li onClick={()=> handleSelect(item.product)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.product} </li>
@@ -75,20 +75,20 @@ const NewProduct = ({heading,isProductDetailPage}) => {
               </div>  
             }
         </div>
-          <div className=" flex gap-x-6">
-            <div className=" max-w-[285px]">
+          <div className=" sm:flex sm:gap-x-6 [&>div]:mb-0">
+            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
                 <ProductLayout catagory={"WATCH"} tittle={"Orange Watch 12 High Quality Health Sensor..."} price={"$959.99"} oldPrice={"$1,919.99"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-[285px]">
+            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
                 <ProductLayout catagory={"TABLET"} tittle={"Ultra Tablet Qwerty HD 10765 Series Low Pri..."} price={"$799.00"} rating={4} discount={false} bordering={true} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-[285px]">
+            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
                 <ProductLayout catagory={"AUDIO"} tittle={"QuietComfort 45 Wireless Headphone..."} price={"$329.99"} rating={3} bordering={true} discount={false} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-[285px]">
+            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
                 <ProductLayout catagory={"LAPTOP"} tittle={"Surface Laptop 4 XPS 13 Plus 64GB i7 Touch ..."} price={"$2,399.99"} oldPrice={"$2,878.00"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-[285px]">
+            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
                 <ProductLayout catagory={"CAMERA"} tittle={"CamPro HERO10 Black Sleek Design 2023 4K ..."} price={"$1,499.99"} rating={2} bordering={true} discount={false} stack={false} starckAmount={"50"} />
             </div>
           </div>
@@ -96,7 +96,7 @@ const NewProduct = ({heading,isProductDetailPage}) => {
            ?
             null
            :
-           <div className=" mt-16 flex justify-center">
+           <div className=" mt-7.5 sm:mt-16 flex justify-center">
               <Button content={"Load More"} bg="transparent" color="#FF624C" border="1px solid #FF624C" />
            </div>
           }

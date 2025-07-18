@@ -99,7 +99,7 @@ const TopRight = () => {
             }
 
             {isOpen &&
-            <ul className=' absolute rounded-[5px] overflow-hidden w-[210px] top-10 left-[-20px] bg-white shadow-xl z-50 font-montserrat text-[#303030] font-semibold text-sm'>
+            <ul className=' absolute border border-[#CBCBCB] rounded-[5px] overflow-hidden w-[210px] top-10 left-[-20px] bg-white shadow-xl z-50 font-montserrat text-[#303030] font-semibold text-sm'>
               {countries.map((country ,index)=>{
 
                   return <li key={index}
