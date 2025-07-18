@@ -5,6 +5,10 @@
     --font-poppins : "Poppins",sans-serif
 }
 
+body{
+  scroll-behavior: smooth;
+}
+
 .slick-slide {
   width: 285px;
   margin: 0 auto;

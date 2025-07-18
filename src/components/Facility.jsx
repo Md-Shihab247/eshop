@@ -10,7 +10,7 @@ const Facility = () => {
       <div className=" px-2">
         <Container>
         <div className=" flex justify-between items-center flex-wrap my-[20px] sm:my-[80px]">
-          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49.5%] sm:w-auto">
+          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49%] sm:w-auto">
             <HeadPhone />
             <div>
               <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
@@ -22,7 +22,7 @@ const Facility = () => {
             </div>
           </div>
 
-          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49.5%] sm:w-auto">
+          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49%] sm:w-auto">
             <Secure />
             <div>
               <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
@@ -34,7 +34,7 @@ const Facility = () => {
             </div>
           </div>
 
-          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49.5%] sm:w-auto">
+          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49%] sm:w-auto">
             <Shipping />
             <div>
               <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
@@ -46,7 +46,7 @@ const Facility = () => {
             </div>
           </div>
 
-          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49.5%] sm:w-auto">
+          <div className=" flex items-center mb-5 sm:mb-0 gap-x-3 sm:gap-x-6 w-[49%] sm:w-auto">
             <Transparent />
             <div>
               <h3 className=" font-montserrat text-[#303030] text-base font-bold leading-6">
