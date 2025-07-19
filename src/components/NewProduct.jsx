@@ -40,7 +40,7 @@ const NewProduct = ({heading,isProductDetailPage}) => {
     }
 
   return (
-    <div className={isProductDetailPage ? "my-16" : "my-6 sm:my-[80px] px-2 sm:px-0"}>
+    <div className={isProductDetailPage ? "my-16" : "my-10 sm:my-[80px] px-2 sm:px-0"}>
       <Container>
         <div className=" sm:flex sm:justify-between mb-12">
             <h3 className=" font-poppins font-semibold text-[#303030] text-3xl sm:text-4xl leading-[46px] mb-3 sm:mb-0"> {heading} </h3>
@@ -75,20 +75,20 @@ const NewProduct = ({heading,isProductDetailPage}) => {
               </div>  
             }
         </div>
-          <div className=" sm:flex sm:gap-x-6 [&>div]:mb-0">
-            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
+          <div className=" sm:flex sm:gap-x-6">
+            <div className=" max-w-screen sm:max-w-[285px] scale-96 sm:scale-100">
                 <ProductLayout catagory={"WATCH"} tittle={"Orange Watch 12 High Quality Health Sensor..."} price={"$959.99"} oldPrice={"$1,919.99"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
+            <div className=" max-w-screen sm:max-w-[285px] scale-96 sm:scale-100">
                 <ProductLayout catagory={"TABLET"} tittle={"Ultra Tablet Qwerty HD 10765 Series Low Pri..."} price={"$799.00"} rating={4} discount={false} bordering={true} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
+            <div className=" max-w-screen sm:max-w-[285px] scale-96 sm:scale-100">
                 <ProductLayout catagory={"AUDIO"} tittle={"QuietComfort 45 Wireless Headphone..."} price={"$329.99"} rating={3} bordering={true} discount={false} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
+            <div className=" max-w-screen sm:max-w-[285px] scale-96 sm:scale-100">
                 <ProductLayout catagory={"LAPTOP"} tittle={"Surface Laptop 4 XPS 13 Plus 64GB i7 Touch ..."} price={"$2,399.99"} oldPrice={"$2,878.00"} rating={5} bordering={true} discount={true} stack={false} starckAmount={"50"} />
             </div>
-            <div className=" max-w-screen sm:max-w-[285px] scale-95 sm:scale-100">
+            <div className=" max-w-screen sm:max-w-[285px] scale-96 sm:scale-100">
                 <ProductLayout catagory={"CAMERA"} tittle={"CamPro HERO10 Black Sleek Design 2023 4K ..."} price={"$1,499.99"} rating={2} bordering={true} discount={false} stack={false} starckAmount={"50"} />
             </div>
           </div>

@@ -27,11 +27,11 @@ const Faq = () => {
 
   return (
     <div
-      className="py-16 bg-[#F4F4F4]"
+      className=" py-10 sm:py-16 bg-[#F4F4F4] px-2 sm:px-0"
     >
       <Container>
-        <div className=" flex">
-          <div className="w-[926px]">
+        <div className=" sm:flex">
+          <div className=" max-w-screen sm:w-[926px]">
             {AccordionData.map((item, index) => {
               return (
                 <Accordion
@@ -44,17 +44,17 @@ const Faq = () => {
               );
             })}
           </div>
-          <div className=" relative ml-[112px] flex items-end">
-                <img className=" absolute top-0 left-[332px]" src="images/accordionDot.png" alt="accordion icon" />
+          <div className=" mt-6 sm:mt-0 relative sm:ml-[112px] flex items-end">
+                <img className=" absolute top-0 left-[332px] hidden sm:flex" src="images/accordionDot.png" alt="accordion icon" />
             <div>
-              <h4 className=" max-w-[306px] font-poppins text-[#303030] text-4xl font-semibold leading-[46px]">
+              <h4 className="max-w-[260px] sm:max-w-[306px] font-poppins text-[#303030] text-3xl sm:text-4xl font-semibold leading-[46px]">
               Frequently Asked Questions
             </h4>
-            <p className=" max-w-[392px] mt-6 mb-16 font-montserrat text-xl text-[#303030] font-normal leading-7.5">
+            <p className=" sm:max-w-[392px] mt-2 sm:mt-6 mb-10 sm:mb-16 font-montserrat text-xl text-[#303030] font-normal leading-7.5">
               Questions that get asked the most by our clients. Get any burning
               questions?
             </p>
-            <Button content={"Ask A Question"} />
+            <Button content={"Ask A Question"}/>
             </div>
           </div>
         </div>

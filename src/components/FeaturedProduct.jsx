@@ -36,7 +36,7 @@ const FeaturedProduct = () => {
       centerMode: true,
       centerPadding: "0px",
       className: "center",
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 2000,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,

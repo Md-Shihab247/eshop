@@ -64,7 +64,7 @@ const SpringSale = () => {
         dots: false,
         infinite: true,
         speed: 1500,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -76,6 +76,7 @@ const SpringSale = () => {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
+              speed: 500,
             }
           }
       ]
