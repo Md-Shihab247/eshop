@@ -108,7 +108,9 @@ const SpringSale = () => {
               </div>
                </div>
               <div className=" flex justify-center sm:block">
-                <Button content={"Shop Now"}/>
+                <span className=" relative left-[10px] sm:left-0">
+                  <Button content={"Shop Now"}/>
+                </span>
               </div>
               <div className=" hidden sm:block mt-[90px]">
                 <img  src="images/springDots.png" alt="spring dots" />

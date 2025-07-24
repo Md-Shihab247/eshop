@@ -1,5 +1,13 @@
 import Container from "./layouts/Container"
 import Slider from "react-slick";
+
+  function SampleNextArrow(props) {
+  const { className, style } = props;
+  return (
+    <div className={className} style={{ ...style, display: "none"}}/>
+  );
+}
+
 const Brands = () => {
 
     const settings = {
@@ -10,31 +18,44 @@ const Brands = () => {
     autoplay: true,
     speed: 5000,
     autoplaySpeed: 0,
-    cssEase: "linear"
+    cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
   };
 
   return (
     <>
-      <div className=" my-[100px]">
+      <div className=" mx-2 sm:mx-0 my-[40px] sm:my-[100px]">
         <Container>
-            <Slider {...settings} className=" flex items-center gap-x-[199px]">
+            <div className=" max-w-screen">
+              <Slider {...settings} className=" sm:flex sm:items-center sm:gap-x-[199px]">
                 <div>
-                  <img src="./images/logo1.png" alt="samsung logo" />
+                  <div className=" h-6 flex items-center sm:items-start sm:h-0">
+                    <img src="./images/logo1.png" alt="samsung logo" className=" scale-85 sm:scale-100" />
+                  </div>
                 </div>
                 <div>
-                  <img src="./images/logo2.png" alt="Open AI logo" />
+                  <div className=" h-6 flex items-center sm:items-start sm:h-0">
+                    <img src="./images/logo2.png" alt="Open AI logo" className=" scale-85 sm:scale-100" />
+                  </div>
                 </div>
                 <div>
-                  <img src="./images/logo3.png" alt="Amazon logo" />
+                  <div className=" h-6 flex items-center sm:items-start sm:h-0">
+                    <img src="./images/logo3.png" alt="Amazon logo"  className=" relative top-1 scale-85 sm:scale-100"/>
+                  </div>
                 </div>
                 <div>
-                  <img src="./images/logo4.png" alt="Tencent logo" />
+                  <div className=" h-6 flex items-center sm:items-start sm:h-0">
+                    <img src="./images/logo4.png" alt="Tencent logo" className=" scale-85 sm:scale-100" />
+                  </div>
                 </div>
                 <div>
-                  <img src="./images/logo5.png" alt="Spotify logo" />
+                  <div className=" h-6 flex items-center sm:items-start sm:h-0">
+                    <img src="./images/logo5.png" alt="Spotify logo" className=" scale-85 sm:scale-100" />
+                  </div>
                 </div>
             </Slider>
-      </Container>
+            </div>
+        </Container>
       </div>
     </>
   )

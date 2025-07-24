@@ -42,7 +42,7 @@ const ProductLayout = ({springDisAmount ,springHover ,springDiscount,limited,pad
                 <span className=' ml-2 font-montserrat text-base font-normal leading-6'>( 100 )</span>
             </div>
             <div  className=' flex items-center  mt-6'>
-            <div className='text-[#303030] font-poppins text-2xl font-semibold leading-7.5 duration-300 group-hover:text-[#FF624C]'> {price} </div>
+            <div className='text-[#303030] font-poppins text-2xl font-semibold leading-7.5'> {price} </div>
             <span className=' opacity-50 ml-2 mt-1 text-[#303030] text-base font-montserrat font-normal leading-6 line-through'> {oldPrice} </span>
             </div>
             {stack &&

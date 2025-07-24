@@ -9,11 +9,11 @@ import FooterLocationIcon from '../../icons/FooterLocationIcon'
 
 const FooterBottom = () => {
   return (
-    <div className=' mt-[100px]'>
+    <div className=' mt-12.5 sm:mt-[100px] px-2 sm:px-0'>
       <Container>
-          <div className=' flex items-start pb-[80px] border-b border-[#CBCBCB]'>
+          <div className=' sm:flex sm:items-start pb-[80px] border-b border-[#CBCBCB]'>
               <div className=' font-montserrat text-base font-normal leading-6 text-[#303030] mr-[167px]'>
-                <Link to="/"><img src="./images/logo.png" alt="logo" className='mb-[158px]'/></Link>
+                <Link to="/"><img src="./images/logo.png" alt="logo" className=' sm:mb-[158px]'/></Link>
                 <ul className=' flex flex-col gap-y-3'>
                   <li>
                     <span className=" cursor-pointer flex items-center gap-x-3">
@@ -38,7 +38,7 @@ const FooterBottom = () => {
                 </ul>
               </div>
 
-              <div className=' mr-[96px]'>
+              <div className=' sm:mr-[96px]'>
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Links</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Products List </Link> </li>
@@ -49,7 +49,7 @@ const FooterBottom = () => {
                 </ul>
               </div>
               
-              <div className=' mr-[96px]'>
+              <div className=' sm:mr-[96px]'>
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Supports</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>About Us</Link> </li>
@@ -61,7 +61,7 @@ const FooterBottom = () => {
                 </ul>
               </div>
               
-              <div className=' mr-[80px]'>
+              <div className=' sm:mr-[80px]'>
                 <h4 className=' font-poppins font-semibold text-xl leading-7.5 text-[#303030] mb-6'>Categories</h4>
                 <ul className=' font-montserrat text-base font-normal leading-6 flex flex-col gap-y-3'>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Computers & Tablets </Link> </li>
@@ -86,7 +86,7 @@ const FooterBottom = () => {
               </div>
               
           </div>
-          <div className=' flex justify-between mt-2 text-sm font-normal font-montserrat text-[#303030] leading-5 mb-[88px]'>
+          <div className=' sm:flex sm:justify-between mt-2 text-sm font-normal font-montserrat text-[#303030] leading-5 mb-[88px]'>
             <Link to='#'>Copyright © 2023 E-Shop. All Rights Reserved.</Link>
             <div className=' flex gap-x-2.5'>
               <Link to="#">Privacy Policy</Link>
