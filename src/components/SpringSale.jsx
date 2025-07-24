@@ -11,7 +11,9 @@ import { useEffect, useState } from "react";
 function SampleNextArrow(props) {
   const {onClick } = props;
   return (
-    <RightArrow bg="#F4F4F4" width="72px" height="72px" springArrow={true} click={onClick}/>
+    <span className=" hidden sm:block">
+      <RightArrow bg="#F4F4F4" width="72px" height="72px" springArrow={true} click={onClick}/>
+    </span>
   );
 }
 
@@ -63,7 +65,7 @@ const SpringSale = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         autoplay: true,
         autoplaySpeed: 2000,
         slidesToShow: 2,
@@ -76,7 +78,7 @@ const SpringSale = () => {
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              speed: 500,
+              speed: 2500,
             }
           }
       ]
@@ -118,7 +120,7 @@ const SpringSale = () => {
              </div>
          </div>
           <div className="w-screen sm:w-[970px] mt-5 sm:mt-0 scale-90 sm:scale-100 rounded-[10px]">
-               <div className=" ml-[-25px] sm:ml-0">
+               <div className=" ml-[-30px] sm:ml-0">
                  <Slider className="spring_sale" {...settings}>
                     <div className=" rounded-[10px]">
                         <ProductLayout springHover={true} springDiscount={true} springDisAmount={"10%"} rating={5} padding={true} src="images/spring-card-bg1.png" catagory="TELEVISION" tittle="LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color Enhancer USB Movie..." price="$4,599.00" oldPrice="$5,058.00" stack={true} starckAmount={"50"} bordering={false}/>
