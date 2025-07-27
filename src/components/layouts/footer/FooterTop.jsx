@@ -16,7 +16,7 @@ const FooterTop = () => {
                     </div>
                 </div>
         :
-        <div className={` ${location.pathname == '/product-list' ? 'bg-[linear-gradient(270deg,_rgba(244,244,244,1)_37%,_rgba(217,217,217,1)_52%)]': 'bg-[linear-gradient(90deg,_rgba(244,244,244,1)_36%,_rgba(217,217,217,1)_49%)]'} overflow-hidden w-full sm:rounded-[25px] py-12.5 sm:py-[114px] sm:pl-[100px] px-2 sm:px-0`}>
+        <div className={` ${location.pathname == '/product-list' ? 'bg-[linear-gradient(270deg,_rgba(244,244,244,1)_37%,_rgba(217,217,217,1)_52%)]': 'bg-[linear-gradient(90deg,_rgba(244,244,244,1)_36%,_rgba(217,217,217,1)_49%)]'} overflow-hidden w-full rounded-[10px] sm:rounded-[25px] py-12.5 sm:py-[114px] sm:pl-[100px] px-3.5 sm:px-0`}>
             {location.pathname == '/product-list'
              ?
             <div className=" relative left-[835px]">
@@ -24,7 +24,7 @@ const FooterTop = () => {
               <p className=" mt-4 mb-8 font-montserrat text-[#303030] text-[20px] font-normal leading-[30px] max-w-[490px]">Browse our wide selection of electronics and find the perfect promo for you from newsletter.</p>
               <input type="email"  placeholder="Enter your email address ..." className=" w-[494px] h-[72px] text-base text-[#303030] pl-6 pr-12 py-[18px] bg-white border border-[#929292] opacity-75 rounded-[10px] mb-4"/>
               <br />
-              <Button content={'Subscribe'}/>
+                <Button content={'Subscribe'}/>
             </div>
 
             :
@@ -35,7 +35,7 @@ const FooterTop = () => {
               ?
               null
               :
-            <input type="email"  placeholder="Enter your email address ..." className="w-[90vw] sm:w-[494px] h-[50px] sm:h-[72px] text-base text-[#303030] pl-3 sm:pl-6 pr-12 py-[18px] bg-white border border-[#929292] opacity-75 rounded-[6px] sm:rounded-[10px] mb-4"/>
+            <input type="email"  placeholder="Enter your email address ..." className=" w-[85vw] sm:w-[494px] h-[50px] sm:h-[72px] text-base text-[#303030] pl-3 sm:pl-6 pr-12 py-[18px] bg-white border border-[#929292] opacity-75 rounded-[10px] mb-4"/>
 
             }
             <br />

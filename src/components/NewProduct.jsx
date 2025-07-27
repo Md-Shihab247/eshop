@@ -62,7 +62,7 @@ const NewProduct = ({heading,isProductDetailPage}) => {
                       }
 
                     {isDropDownOpen && (
-                        <ul className="bg-[#fff] border border-[#CBCBCB] rounded-[5px] overflow-hidden right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
+                        <ul className="bg-[#fff] border border-[#CBCBCB] rounded-[5px] overflow-hidden right-0 sm:right-10 font-montserrat font-semibold absolute box-border top-8  shadow-xl text-sm text-[#303030] w-[180px] z-[999]">
                           {newProducts.map((item,index)=>{
 
                           return <li onClick={()=> handleSelect(item.product)} className={` py-2 px-3 border-b border-[#CBCBCB] cursor-pointer  last:border-b-transparent hover:bg-[#ddd]`} key={index}> {item.product} </li>

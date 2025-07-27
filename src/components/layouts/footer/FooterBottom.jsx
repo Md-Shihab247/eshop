@@ -17,25 +17,19 @@ const FooterBottom = () => {
                 <ul className=' mt-5 sm:mt-0 flex flex-col gap-y-2 sm:gap-y-3'>
                   <li>
                     <span className=" cursor-pointer flex items-center gap-x-3">
-                    <span className=' hidden sm:flex'>
                       <FooterCallIcon/>
-                    </span>
                     <Link to="tel: +1 (555) 123-4567">+1 (555) 123-4567</Link>
                     </span>
                   </li>
                   <li>
                     <span className="cursor-pointer flex items-center gap-x-3">
-                     <span className=' hidden sm:flex'>
                       <FooterEmailIcon/>
-                     </span>
                      <Link to="mailto:information@eshop.com">information@eshop.com</Link>
                     </span>
                   </li>
                   <li>
                     <span className="cursor-pointer flex items-center gap-x-3">
-                      <span className=' hidden sm:flex'>
                         <FooterLocationIcon/>
-                      </span>
                       <Link to="https://maps.app.goo.gl/n58JNE5g419y34Uc8" target="_blank">
                         123 Main Street, Suite 105, Anytown USA
                       </Link>
@@ -44,7 +38,8 @@ const FooterBottom = () => {
                 </ul>
               </div>
 
-              <div className=' mt-5 sm:mt-0 sm:mr-[96px]'>
+              <div className=' flex sm:block'>
+                <div className=' mt-5 sm:mt-0 mr-21 sm:mr-[96px]'>
                 <h4 className=' font-poppins font-semibold text-lg sm:text-xl leading-7.5 text-[#303030] mb-3.5 sm:mb-6'>Links</h4>
                 <ul className=' font-montserrat text-sm sm:text-base font-normal leading-6 flex flex-col gap-y-3'>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'> Products List </Link> </li>
@@ -66,6 +61,7 @@ const FooterBottom = () => {
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Careers</Link> </li>
                 </ul>
               </div>
+              </div>
               
               <div className=' mt-5 sm:mt-0 sm:mr-[80px]'>
                 <h4 className=' font-poppins font-semibold text-lg sm:text-xl leading-7.5 text-[#303030] mb-3.5 sm:mb-6'>Categories</h4>
@@ -84,7 +80,7 @@ const FooterBottom = () => {
                 <h4 className=' font-poppins font-semibold text-lg sm:text-xl leading-7.5 text-[#303030] mb-3.5 sm:mb-[25px]'>Payments</h4>
                 <img src="./images/payment.png" alt="logo" className=' mb-7 sm:mb-[74px]' />
                 <h4 className=' font-poppins font-semibold text-lg sm:text-xl leading-7.5 text-[#303030] mb-3.5 sm:mb-6'>Follow Us</h4>
-                <ul className=' font-montserrat text-sm sm:text-base font-normal leading-6 flex flex-col gap-y-3'>
+                <ul className=' font-montserrat text-sm sm:text-base font-normal leading-6 flex gap-x-6 sm:gap-x-0 sm:flex-col gap-y-3'>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Twitter </Link> </li>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Instagram </Link> </li>
                   <li> <Link to='/' className=' transition-all hover:text-[#FF624C]'>Facebook </Link> </li>
@@ -92,7 +88,7 @@ const FooterBottom = () => {
               </div>
               
           </div>
-          <div className=' sm:flex sm:justify-between mt-2 text-sm font-normal font-montserrat text-[#303030] leading-5 mb-10 sm:mb-[88px]'>
+          <div className=' sm:flex sm:justify-between mt-2 text-sm font-normal font-montserrat text-[#303030] leading-5 mb-5 sm:mb-[88px]'>
             <div className=' text-center sm:text-start'>
               <Link to='#'>Copyright © 2023 E-Shop. All Rights Reserved.</Link>
             </div>

@@ -4,8 +4,10 @@ import FooterBottom from './FooterBottom'
 const Footer = () => {
   return (
     <>
-        <FooterTop/>
-        <FooterBottom/>
+        <div className=' px-2 sm:px-0'>
+          <FooterTop/>
+          <FooterBottom/>
+        </div>
     </>
   )
 }
